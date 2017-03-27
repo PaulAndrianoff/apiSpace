@@ -1,0 +1,80 @@
+.container{
+    width: 950px;
+    margin: auto;
+    .wrapper_edit
+    {
+
+        background: #fefefe;
+        height: 200px;
+        border: 5px solid #d7382a;
+        padding: 10px;
+
+        .edit-header
+        {
+            .title
+            {
+                display: inline-block;
+                color: #001833;
+                font-family: 'Roboto Condensed', sans-serif;
+
+                span
+                {
+                    color : #d20024;
+                }
+            }
+
+            .close-edit
+            {
+                position: absolute;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+
+                right: 10px;
+                top: 10px;
+                img
+                {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        input
+        {
+            background: none;
+            border: none;
+            border: 1px solid #e2e6ea;
+
+
+            &.quantity-edit
+            {
+                margin-left: 10px;
+            }
+            &.price-edit
+            {
+                margin-left: 10px;
+            }
+
+            &.valid-button
+            {
+                background: #d7382a;
+                width: 60px;
+                height: 40px;
+                border: none;
+                color: #fefefe;
+                font-size: 13px;
+                outline:  none;
+                right: 10;
+            }
+        }
+
+        textarea
+        {
+            margin-top: 10px;
+            resize: none;
+            width: 100%;
+            height: 40px;
+        }
+    }
+}

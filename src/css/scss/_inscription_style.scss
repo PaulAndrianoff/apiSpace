@@ -1,0 +1,158 @@
+
+.wrapper-inscription
+{
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+
+    .title-inscription {
+        text-align: center;
+        margin-bottom: 50px;
+        color: #4b4b4c;
+        font-weight: 800;
+        margin: 50px 0 20px;
+        text-transform: uppercase;
+    }
+    .title-formulaire-inscription
+    {
+        text-align: center;
+        margin-bottom: 50px;
+        color: #4b4b4c;
+        font-size: 24px;
+        font-weight: 800;
+        margin: 50px 0 20px;
+        text-transform: uppercase;
+    }
+
+    .description
+    {
+        margin: auto;
+        text-align: left;
+        width: 300px;
+        color: #7d8485;
+    }
+
+
+    .messages.success
+    {
+        p
+        {
+            color: green;
+        }
+    }
+
+    .messages.error
+    {
+        p
+        {
+            color: red;
+        }
+    }
+
+    .identification-form
+    {
+
+        position: relative;
+        width: 300px;
+        margin:auto;
+        p
+        {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        position: relative;
+        margin-top: 10px;
+        div
+        {
+            margin: 30px 0;
+            width: 100%;
+            margin: auto;
+            label
+            {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 13px;
+            }
+
+            input
+            {
+                height: 40px;
+                border: 1px solid #ddd;
+                border-radius: 0;
+                background: #fefefe;
+                padding: 0 2%;
+                font-size: 13px;
+                color: #001832;
+                width: 100%;
+                margin-bottom: 10px;
+                -webkit-appearance: none;
+            }
+
+            input:focus
+            {
+                outline:  none;
+            }
+
+            &.button-inscription input
+            {
+                background-color: #d7382a;
+                border-radius: 3px;
+                border: none;
+                bottom: 30px;
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 15px;
+                font-weight: 400;
+                letter-spacing: 0;
+                line-height: 15px;
+                padding: 12px 30px;
+                text-align: center;
+                text-transform: uppercase;
+                width: 100%;
+
+            }
+
+            &.connect_inscription
+            {
+
+                margin-top: 10px;
+                width: 100%;
+
+                a
+                {
+                    background-color: #d7382a;
+                    border-radius: 3px;
+                    border: none;
+                    bottom: 30px;
+                    color: #ffffff;
+                    cursor: pointer;
+                    font-size: 15px;
+                    font-weight: 400;
+                    letter-spacing: 0;
+                    line-height: 15px;
+                    padding: 12px 30px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    width: 100%;
+                    text-decoration: none;
+
+                }
+            }
+
+        }
+
+    }
+
+    .messages
+    {
+        text-align: center;
+    }
+    .error
+    {
+        p
+        {
+            color :red;
+        }
+    }
+
+}
