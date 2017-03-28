@@ -196,10 +196,15 @@ else
 		$prepare->execute();
 	}
 }
-$query = $pdo->prepare("SELECT * FROM launches, status WHERE launches.id_status = status.id");
+$query = $pdo->prepare("SELECT * FROM agency");
 $query->execute();
 $result = $query->fetchAll();
-echo "<pre>";
-print_r($result);
-echo "</pre>";
 
+?>
+
+<html>
+	<?php foreach($result as $key => $_result ): ?>
+		<div><?= $_result->name ?><img src="src/images/<?= $_result->abbrev ?>.png" alt="flag" width="100px"></div>
+	<?php endforeach; ?>
+	
+</html>
