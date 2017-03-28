@@ -1,61 +1,54 @@
-// Dependencies
-var gulp          = require( 'gulp' ),
-    gulp_css_nano = require( 'gulp-cssnano' ),
-    gulp_rename   = require( 'gulp-rename' ),
-    gulp_sass = require('gulp-sass'),
-    gulp_concat   = require('gulp-concat'),
-    gulp_uglify   =require('gulp-uglify');
+var gulp         = require( 'gulp' ),
+    gulp_cssnano = require('gulp-cssnano'),
+    gulp_rename  = require('gulp-rename'),
+    gulp_uglify  = require('gulp-uglify'),
+    gulp_concat = require('gulp-concat'),
+    gulp_autoprefixer = require ( 'gulp-autoprefixer' ),
+    gulp_sass = require('gulp-sass');
 
+gulp.task( 'default', [ 'sass','css', 'js', 'watch' ], function() {} );
 
-
-// CSS task
-gulp.task( 'css', function()
-{
-    return gulp.src( './src/css/style.css' )    // Get main CSS file
-
-        .pipe( gulp.dest( './src/css/' ) );     // Put it in folder
-} );
-
-
-
-
-//SASS task
 gulp.task('sass', function () {
-  return gulp.src('./src/css/*.scss')
-        .pipe(gulp_sass.sync().on('error', gulp_sass.logError))
-        .pipe( gulp_css_nano() )                // Minify it
-        .pipe( gulp_rename( 'style.min.css' ) ) // Rename it
-    .pipe(gulp.dest('./src/css'));
+  return gulp.src('./src/sass/*.scss')
+    .pipe(gulp_sass.sync().on('error', gulp_sass.logError))
+    .pipe(gulp.dest('./src/styles/'));
 });
 
+gulp.task( 'css', function()
+{
+    return gulp.src('./src/styles/style.css')
+        .pipe(gulp_autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp_cssnano())
+        .pipe(gulp_rename('style.min.css'))
+        .pipe(gulp.dest('./src/build/'))
+} );
 
-
-
-// JS task
 gulp.task( 'js', function()
 {
-    return gulp.src( [                          // Get JS files (in order)
-            './src/js/scriptdeux.js',
-            './src/js/script.js'
+    return gulp.src( [
+            './src/js/main.js'
         ] )
-        .pipe( gulp_concat( 'script.min.js' ) ) // Concat in one file
-        .pipe( gulp_uglify() )                  // Minify them
-        .pipe( gulp.dest( './src/js/' ) );      // Put it in folder
+        .pipe( gulp_concat( 'main.min.js' ) )
+        .pipe( gulp_uglify() )
+        .pipe( gulp.dest( './src/build/' ) );
 } );
 
-
-
-
-
-// Watch task
 gulp.task( 'watch', function()
 {
-    // Watch for CSS modifications
-    // gulp.watch( './src/css/style.css', [ 'css' ] );
-    // Watch sass
-    gulp.watch('./src/css/**/*.scss', ['sass']);
-    // Watch for JS modifications (but not for script.min.js)
-    gulp.watch( [ './src/js/**', '!./src/js/script.min.js' ], [ 'js' ] );
+    gulp.watch( './src/styles/style.css', [ 'css' ] );
+    gulp.watch('./src/sass/*.scss', ['sass']);
+    gulp.watch( [ './src/js/**', '!./src/js/main.min.js' ], [ 'js' ] );
 } );
 
-gulp.task( 'default', [ 'css','sass', 'js', 'watch' ] );
+
+
+
+// gulp.task('zip', function()
+// {
+//     return gulp.src('')
+//         .pipe(zip('archive.zip'))
+//         .pipe(gulp.dest('dist'));
+// })
