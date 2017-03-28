@@ -1,5 +1,5 @@
 <?php
-include_once "config.php";
+include_once "includes/config.php";
 
 $headers = array( 
     'Accept: application/json'
