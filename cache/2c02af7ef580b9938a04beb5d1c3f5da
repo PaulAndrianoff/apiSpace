@@ -1,0 +1,1 @@
+{"types":[{"id":1,"name":"GREEN","description":"Launch is GO"},{"id":2,"name":"RED","description":"Launch is NO-GO"},{"id":3,"name":"SUCCESS","description":"Launch was a success"},{"id":4,"name":"FAIL","description":"Launch failed"}],"total":4,"count":4,"offset":0}
