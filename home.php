@@ -20,7 +20,7 @@
     </div>
     <div class='home-subtitle'>
         <h3 class="home-subtitle_welcome">WELCOME</h3>
-        <p class="home-subtitle_explication">  DISCOVER ALL THE DATA YOU WOULD LIKE ABOUT THE AERONOTICAL AND SPATIAL WOLRD</p>
+        <p class="home-subtitle_explication">DISCOVER ALL THE DATA YOU WOULD LIKE ABOUT THE AERONOTICAL AND SPATIAL WOLRD</p>
         <a href="./views/pages/stats.php" class="lets-go">
             <span>
                 LET'S

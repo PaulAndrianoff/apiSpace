@@ -216,31 +216,11 @@ else
 		$prepare->execute();
 	}
 }
-$query = $pdo->prepare("SELECT pads.name as pads_name, agency.name as agency_name FROM pads, agency WHERE pads.id_agency = agency.id");
-$query->execute();
-$result = $query->fetchAll();
-echo "<pre>";
-print_r($result);
-echo "</pre>";
-?>
-
-<html>
-
-	<script>
-
-//		var tab  = <?php echo json_encode($result); ?>;
-//		var vko = 20;
-//		var nasa = 0;
-//		
-//		for(var i = 0; i < tab.length; i++)
-//		{
-//			if(tab[i].abbrev == "VKO") vko++;
-//			if(tab[i].abbrev == "NASA") nasa++;
-//		}
-//		console.log("nb de launches de VKO est " + vko + " - " + (vko/100));
-//		console.log("nb de launches de NASA est " + nasa + " - " + (nasa/100));
-		
-	</script>
-
-
-</html>
+//$query = $pdo->prepare("SELECT pads.name as pads_name, agency.name as agency_name FROM pads, agency WHERE pads.id_agency = agency.id");
+//$query->execute();
+//$result = $query->fetchAll();
+//echo "<pre>";
+//print_r($result);
+//echo "</pre>";
+//
+header("location: home.php");
