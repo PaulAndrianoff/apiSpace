@@ -1,14 +1,14 @@
 function openNav() {
     document.querySelector(".section-right").style.transform = "translateX(0)";
     document.querySelector(".section-right").style.width = "600px";
-    document.querySelector(".paragraph-stats-presentation").stylestyle.transform = "translateX(-600px)";
+
 }
 
 function closeNav() {
     console.log('ok');
         document.querySelector(".section-right").style.transform = "translateX(100px)";
     document.querySelector(".section-right").style.width = "0";
-    document.querySelector(".paragraph-stats-presentation").style.transform = "translateX(0)";
+
 }
 
 
