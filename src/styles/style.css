@@ -2,6 +2,12 @@
   color: green;
   background: blue; }
 
+@font-face {
+  font-family: earthorbiter;
+  src: url("../fonts/earthorbiter.ttf");
+  font-weight: 300;
+  letter-spacing: 20px; }
+
 .title {
   position: absolute;
   font-weight: 300;
@@ -9,6 +15,7 @@
   left: 0;
   right: 0;
   margin-top: -80px;
+  font-family: earthorbiter, 'lato', 'Arial', sans-serif;
   font-size: 130px;
   text-align: center;
   letter-spacing: 20px;
@@ -29,7 +36,8 @@
   right: 0;
   font-size: 25px;
   text-align: center;
-  letter-spacing: 6px; }
+  letter-spacing: 6px;
+  font-family: 'lato', sans-serif; }
   .home-subtitle .home-subtitle_welcome {
     margin-bottom: 45px; }
   .home-subtitle .home-subtitle_explication {
@@ -74,8 +82,6 @@
     opacity: 1; } }
 
 body {
-  font-family: "lato", sans-serif;
-  font-weight: 300;
   overflow: hidden; }
   body .container-stats {
     width: 100%;
@@ -86,6 +92,7 @@ body {
       height: 100px;
       border-bottom: 3px solid #00BBFF; }
       body .container-stats header .title-stats {
+        font-family: earthorbiter;
         line-height: 50px;
         text-align: center;
         font-size: 40px;
@@ -95,7 +102,8 @@ body {
         line-height: 30px;
         letter-spacing: 10px;
         text-align: center;
-        color: #fefefe; }
+        color: #fefefe;
+        font-family: 'lato', sans-serif; }
     body .container-stats .main {
       height: 590px;
       width: 100%;
@@ -105,7 +113,7 @@ body {
       flex-wrap: wrap; }
       body .container-stats .main .wrapper-map-and-graph {
         position: relative;
-        width: 800px;
+        min-width: 700px;
         height: 700px;
         border-right: 3px solid  #00BBFF;
         flex-grow: 2;
@@ -168,7 +176,8 @@ body {
         width: 600px;
         height: 500px;
         border: 1px solid yellow;
-        padding: 5px; }
+        padding: 5px;
+        align-items: center; }
         body .container-stats .main .section-right .agency {
           width: 100%;
           height: 50%;

@@ -1,7 +1,7 @@
 body
 {
-    font-family: "lato", sans-serif;
-    font-weight: 300;
+    // font-family: "lato", sans-serif;
+    // font-weight: 300;
     overflow: hidden;
 
     // CONTAINER
@@ -23,6 +23,7 @@ body
 
             .title-stats
             {
+                font-family: earthorbiter;
                 line-height: 50px;
                 text-align: center;
                 font-size: 40px;
@@ -36,9 +37,9 @@ body
                 letter-spacing:10px;
                 text-align: center;
                 color:#fefefe;
+                font-family: 'lato', sans-serif;
 
             }
-
         }
 
         //CONTENT
@@ -55,7 +56,7 @@ body
             .wrapper-map-and-graph
             {
                 position: relative;
-                width: 800px;
+                min-width: 700px;
                 height: 700px;
                 border-right: 3px solid  #00BBFF;
                 flex-grow: 2;
@@ -162,6 +163,7 @@ body
                 height: 500px;
                 border: 1px solid yellow;
                 padding: 5px;
+                align-items: center;
 
 
                 .agency {

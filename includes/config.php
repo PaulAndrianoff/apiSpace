@@ -6,6 +6,7 @@ define('DB_USER','root'); //User name
 define('DB_PASS',''); // '' Default password on phpMyadmin for Windows
 try
 {
+<<<<<<< HEAD
 //	 Try to connect to database
 	$pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
 //	 Set fetch mode to object
@@ -13,6 +14,7 @@ try
 }
 catch (Exception $e)
 {
+<<<<<<< HEAD
 //	 Failed to connect
 	die('Could not connect');
 }

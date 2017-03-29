@@ -216,11 +216,11 @@ else
 		$prepare->execute();
 	}
 }
-//$query = $pdo->prepare("SELECT pads.name as pads_name, agency.name as agency_name FROM pads, agency WHERE pads.id_agency = agency.id");
-//$query->execute();
-//$result = $query->fetchAll();
-//echo "<pre>";
-//print_r($result);
-//echo "</pre>";
+$query = $pdo->prepare("SELECT pads.name as pads_name, agency.name as agency_name FROM pads, agency");
+$query->execute();
+$result = $query->fetchAll();
+echo "<pre>";
+print_r($result);
+echo "</pre>";
 //
 header("location: home.php");
