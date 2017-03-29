@@ -4,6 +4,7 @@ $headers = array(
 	'Accept: application/json'
 );
 $ua = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36';
+
 /* Get rocket from the API put it in cache. We do the rocket once per month */
 $url_rocket = 'https://launchlibrary.net/1.2/rocket/';
 $path_rocket = "./cache/".md5("rocket".date("Y-m"));
@@ -30,6 +31,7 @@ else
 		$prepare->execute();
 	}
 }
+
 /* Get agency from the API put it in cache. We do the agency once per month */
 $url_agency = 'https://launchlibrary.net/1.2/agency';
 $path_agency = "./cache/".md5("agency".date("Y-m"));
@@ -56,6 +58,7 @@ else
 		$prepare->execute();
 	}
 }
+
 /* Get mission from the API put it in cache. We do the mission once per month */
 $url_mission = 'https://launchlibrary.net/1.2/mission';
 $path_mission = "./cache/".md5("mission".date("Y-m"));
@@ -83,6 +86,7 @@ else
 		$prepare->execute();
 	}
 }
+
 /* Get pad from the API put it in cache. We do the pad once per month */
 $url_pad = 'https://launchlibrary.net/1.2/pad/';
 $path_pad = "./cache/".md5("pad".date("Y-m"));
@@ -110,9 +114,16 @@ else
 		$prepare->bindValue(":id_location", $_pad->locationid);
 		$prepare->bindValue(":id_agency", !empty($_pad->agencies)? $_pad->agencies[0]->id : 0);
 		$prepare->execute();
-		//	var_dump($_pad->latitude);
+		$curent_agency = $_pad->agencies;
+		foreach($curent_agency as $_agency){
+			$prepare = $pdo->prepare("INSERT INTO agency (name, abbrev) VALUES(:name, :abbrev)");
+			$prepare->bindValue(":name", $_agency->name);
+			$prepare->bindValue(":abbrev", $_agency->abbrev);
+			$prepare->execute();
+		}
 	}
 }
+
 /* Get location from the API put it in cache. We do the location once per month */
 $url_location = 'https://launchlibrary.net/1.2/location';
 $path_location = "./cache/".md5("location".date("Y-m"));
@@ -139,6 +150,7 @@ else
 		$prepare->execute();
 	}
 }
+
 /* Get launch from the API put it in cache. We do the launch once per month */
 $url_launch = 'https://launchlibrary.net/1.2/launch/';
 $path_launch = "./cache/".md5("launch".date("Y-m"));
@@ -168,8 +180,16 @@ else
 		$prepare->bindValue(":id_agency", $_launch->location->pads[0]->agencies[0]->id); 
 		$prepare->bindValue(":id_rocket", $_launch->rocket->id); 
 		$prepare->execute();
+		$curent_agency = $_launch->location->pads[0]->agencies;
+		foreach($curent_agency as $_agency){
+			$prepare = $pdo->prepare("INSERT INTO agency (name, abbrev) VALUES(:name, :abbrev)");
+			$prepare->bindValue(":name", $_agency->name);
+			$prepare->bindValue(":abbrev", $_agency->abbrev);
+			$prepare->execute();
+		}
 	}
 }
+
 /* Get status from the API put it in cache. We do the status once per month */
 $url_status = 'https://launchlibrary.net/1.2/launchstatus';
 $path_status = "./cache/".md5("status".date("Y-m"));
@@ -196,15 +216,31 @@ else
 		$prepare->execute();
 	}
 }
-$query = $pdo->prepare("SELECT * FROM agency");
+$query = $pdo->prepare("SELECT pads.name as pads_name, agency.name as agency_name FROM pads, agency WHERE pads.id_agency = agency.id");
 $query->execute();
 $result = $query->fetchAll();
-
+echo "<pre>";
+print_r($result);
+echo "</pre>";
 ?>
 
 <html>
-	<?php foreach($result as $key => $_result ): ?>
-		<div><?= $_result->name ?><img src="src/images/<?= $_result->abbrev ?>.png" alt="flag" width="100px"></div>
-	<?php endforeach; ?>
-	
+
+	<script>
+
+//		var tab  = <?php echo json_encode($result); ?>;
+//		var vko = 20;
+//		var nasa = 0;
+//		
+//		for(var i = 0; i < tab.length; i++)
+//		{
+//			if(tab[i].abbrev == "VKO") vko++;
+//			if(tab[i].abbrev == "NASA") nasa++;
+//		}
+//		console.log("nb de launches de VKO est " + vko + " - " + (vko/100));
+//		console.log("nb de launches de NASA est " + nasa + " - " + (nasa/100));
+		
+	</script>
+
+
 </html>
