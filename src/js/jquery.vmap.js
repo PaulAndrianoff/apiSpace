@@ -1,16 +1,34 @@
+jQuery(document).ready(function () {
+    jQuery('#vmap').vectorMap({
+        map: 'world_en',
+        backgroundColor: '#red',
+        border: '1px solid black',
+        color: '#ffffff',
+        hoverOpacity: 0.7,
+        selectedColor: '#666666',
+        enableZoom: true,
+        showTooltip: true,
+        scaleColors: ['#C8EEFF', '#006491'],
+        values: sample_data,
+        normalizeFunction: 'polynomial'
+    });
+});
+/***********************************************************************/
+/*DEBUT FCT AFFICHER SIDEBAR*/
+/***********************************************************************/
 function openNav() {
     document.querySelector(".section-right").style.transform = "translateX(0)";
     document.querySelector(".section-right").style.width = "600px";
-
 }
 
 function closeNav() {
     console.log('ok');
         document.querySelector(".section-right").style.transform = "translateX(100px)";
     document.querySelector(".section-right").style.width = "0";
-
 }
-
+/***********************************************************************/
+/*FIN FCT AFFICHER SIDEBAR*/
+/***********************************************************************/
 
 var VectorCanvas = function (width, height, params) {
     this.mode = window.SVGAngle ? 'svg' : 'vml';
