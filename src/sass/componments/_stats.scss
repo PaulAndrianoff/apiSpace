@@ -1,0 +1,463 @@
+body
+{
+    font-family: "lato", sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+
+    // CONTAINER
+    .container-stats
+    {
+        // position: relative;
+        // left: 0;
+        // top: 0;
+        width: 100%;
+        height: 10000px;
+        margin: auto;
+        background-color: #0B182B;
+
+        // HEADER
+        header
+        {
+            height: 100px;
+            border-bottom: 3px solid #00BBFF;
+
+            .title-stats
+            {
+                line-height: 50px;
+                text-align: center;
+                font-size: 40px;
+                color:#00BBFF;
+                letter-spacing: 20px;
+            }
+
+            .paragraph-stats-presentation
+            {
+                line-height: 30px;
+                letter-spacing:10px;
+                text-align: center;
+                color:#fefefe;
+
+            }
+
+        }
+
+        //CONTENT
+        .main
+        {
+            // position: absolute;
+            height: 590px;
+            width: 100%;
+            overflow: hidden;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+
+            .wrapper-map-and-graph
+            {
+                position: relative;
+                width: 800px;
+                height: 700px;
+                border-right: 3px solid  #00BBFF;
+                flex-grow: 2;
+                flex-shrink: 2;
+
+                .section-map
+                {
+                    position: absolute;
+                    width: 100%;
+                    height: 70%;
+                    border: 1px solid red;
+                    background: #0B182B;
+                    margin: auto;
+                    border-radius: 10px;
+                    padding: 2px;
+                    // display: block;
+
+
+                    #vmap
+                    {
+                        position: absolute;
+                        // left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+
+                    .jqvmap-label
+                    {
+                        position: absolute;
+                        display: none;
+                        -webkit-border-radius: 3px;
+                        -moz-border-radius: 3px;
+                        border-radius: 3px;
+                        background: #292929;
+                        color: white;
+                        font-family: sans-serif, Verdana;
+                        font-size: smaller;
+                        padding: 3px;
+                        pointer-events:none;
+                    }
+                    .jqvmap-pin
+                    {
+                        pointer-events:none;
+                    }
+                    .jqvmap-zoomin, .jqvmap-zoomout
+                    {
+                        position: absolute;
+                        left: 10px;
+                        -webkit-border-radius: 3px;
+                        -moz-border-radius: 3px;
+                        border-radius: 3px;
+                        background: #000000;
+                        padding: 3px;
+                        color: white;
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                        line-height: 13px;
+                        text-align: center;
+                        margin-top: 5px;
+                    }
+                    .jqvmap-zoomin
+                    {
+                        top: 10px;
+                    }
+                    .jqvmap-zoomout
+                    {
+                        top: 30px;
+                    }
+                    .jqvmap-region
+                    {
+                        cursor: pointer;
+                    }
+
+                    .jqvmap-ajax_response
+                    {
+                        width: 100%;
+                        height: 500px;
+                    }
+
+
+                }
+
+                // .section-bottom
+                // {
+                //     position: absolute;
+                //     height: 300px;
+                //     width: 100%;
+                //     background-color: #0B1E3B;
+                //     border-top: 3px solid #00BBFF;
+                //     // display: block;
+                // }
+                //
+
+
+
+            }
+            .section-right
+            {
+                flex-grow: 1;
+                flex-shrink: 1;
+                width: 600px;
+                height: 500px;
+                border: 1px solid yellow;
+                padding: 5px;
+
+
+                .agency {
+                    width: 100%;
+                    height: 50%;
+                    display: flex;
+                    color: white;
+
+
+                    .agency-one
+                    {
+                        margin-bottom: 10px;
+                    }
+
+                    .description-agency
+                    {
+                        text-align: center;
+                        display: inline-block;
+                        width: 150px;
+                        height: 100%;
+                        border: 1px solid red;
+                    }
+                    .graphic-agency
+                    {
+                        display: inline-block;
+                        width: 400px;
+                        height: 100%;
+                        margin-left: 10px;
+                        border: 1px solid red;
+                    }
+
+                    .wrapper-close
+                    {
+                        width: 30px;
+                        height: 100%;
+                        margin-left: 7px;
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid red;
+                        a
+                        {
+                            margin-left: 8px;
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+//début section Raphael
+//     .jqvmap-label
+// {
+// 	position: absolute;
+// 	display: none;
+// 	-webkit-border-radius: 3px;
+// 	-moz-border-radius: 3px;
+// 	border-radius: 3px;
+// 	background: #292929;
+// 	color: white;
+// 	font-family: sans-serif, Verdana;
+// 	font-size: smaller;
+// 	padding: 3px;
+//   pointer-events:none;
+// }
+// .jqvmap-pin {
+//   pointer-events:none;
+// }
+// .jqvmap-zoomin, .jqvmap-zoomout
+// {
+// 	position: absolute;
+// 	left: 10px;
+// 	-webkit-border-radius: 3px;
+// 	-moz-border-radius: 3px;
+// 	border-radius: 3px;
+// 	background: #000000;
+// 	padding: 3px;
+// 	color: white;
+// 	width: 20px;
+// 	height: 20px;
+// 	cursor: pointer;
+// 	line-height: 13px;
+// 	text-align: center;
+//     margin-top: 5px;
+// }
+// .jqvmap-zoomin
+// {
+// 	top: 10px;
+// }
+// .jqvmap-zoomout
+// {
+// 	top: 30px;
+// }
+// .jqvmap-region
+// {
+//   cursor: pointer;
+// }
+//
+// .jqvmap-ajax_response
+// {
+//   width: 100%;
+//   height: 500px;
+// }
+//
+// /* Import the Google Font 'Lato' */
+//
+//
+// .container {
+//   padding: 50px 0;
+//   text-align: center;
+// }
+//
+// .chart {
+//   position: relative;
+//   display: inline-block;
+//   color: #999;
+//   font-size: 20px;
+//   text-align: center;
+// }
+//
+// .chart figcaption {
+//   padding: 50px 25px;
+//   width: 100px;
+//   height: 50px;
+//   border: 20px solid #f0f0f0;
+//   border-radius: 100px;
+//   line-height: 50px;
+// }
+//
+// .chart img {
+//   position: absolute;
+//   max-width: 100px;
+//   max-height: 100px;
+//   background: white;
+// }
+// /* END Container styles */
+//
+// /* couleurs des cercle et position graphiques */
+//
+//
+// svg .outer {
+//   stroke: #e34f26;
+// }
+//
+//
+// /* bleu
+// svg .outer {
+//   stroke: #0d84ce;
+// }
+// */
+//
+// /* jaune
+// svg .outer {
+//   stroke: #f0e040;
+// }
+// */
+//
+// /* vert
+// svg .outer {
+//   stroke: #83cd29;
+// }
+// */
+//
+// .chart svg {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+//
+// .outer {
+//   fill: transparent;
+//   stroke: #333;
+//   stroke-width: 20;
+//   stroke-dasharray: 534;
+//   transition: stroke-dashoffset 1s;
+//   -webkit-animation-play-state: running;
+//
+//   /* firefox bug fix - won't rotate at 90deg angles */
+//   -moz-transform: rotate(-89deg) translateX(-190px);
+// }
+//
+// .chart:hover .outer {
+//   stroke-dashoffset: 534 !important;
+//   -webkit-animation-play-state: paused;
+// }
+// /* END Circle colors and graphic positions */
+//
+//
+// /* Set the initial values for the animation */
+// .chart[data-percent='100'] .outer {
+//   stroke-dashoffset: 0;
+//   -webkit-animation: show100 2s;
+//   animation: show100 2s;
+// }
+//
+// .chart[data-percent='75'] .outer {
+//   stroke-dashoffset: 133;
+//   -webkit-animation: show75 2s;
+//   animation: show75 2s;
+// }
+//
+// .chart[data-percent='50'] .outer {
+//   stroke-dashoffset: 267;
+//   -webkit-animation: show50 2s;
+//   animation: show50 2s;
+// }
+//
+// .chart[data-percent='25'] .outer {
+//   stroke-dashoffset: 401;
+//   -webkit-animation: show25 2s;
+//   animation: show25 2s;
+// }
+// /* END set initial animation values */
+//
+//
+// /* Keyframes for the initial animation */
+// @-webkit-keyframes show100 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+//
+// @keyframes show100 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+//
+// @-webkit-keyframes show75 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 134;
+//   }
+// }
+//
+// @keyframes show75 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 124;
+//   }
+// }
+//
+// @-webkit-keyframes show50 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 267;
+//   }
+// }
+//
+// @keyframes show50 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 267;
+//   }
+// }
+//
+// @-webkit-keyframes show25 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 401;
+//   }
+// }
+//
+// @keyframes show25 {
+//   from {
+//     stroke-dashoffset: 537;
+//   }
+//
+//   to {
+//     stroke-dashoffset: 401;
+//   }
+// }
+// /* END Keyframes for the initial animation */
+// }
