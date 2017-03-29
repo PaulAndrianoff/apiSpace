@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../src/build/reset.min.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../src/build/style.min.css">
+    <link rel="stylesheet" href="../../src/build/graph_style.css">
 </head>
 <body>
     <div class="container-stats">
@@ -18,19 +19,24 @@
 
         <div class="main">
 
-                <section class="section-map">
-                    <!-- MAP : -->
+            <section class="section-map">
+                <!-- MAP : -->
 
-                    <div id="vmap"></div>
+                <div id="vmap"></div>
 
-                </section>
+            </section>
             <section class="section-right">
                 <article class="agency agency-one">
                     <div class="description-agency">
                         <h3>agency a</h3>
                     </div>
                     <div class="graphic-agency">
-
+                        <figure class="chart" data-percent="75">
+                            <figcaption>graph1</figcaption>
+                            <svg width="200" height="200">
+                                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+                            </svg>
+                        </figure>
                     </div>
                     <div class="wrapper-close">
                         <a href="#" class="close">X</a>
