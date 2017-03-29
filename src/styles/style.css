@@ -113,8 +113,8 @@ body {
       align-items: center; }
       body .container-stats .main .section-map {
         display: inline-block;
-        width: 900px;
-        height: 600px;
+        width: 840px;
+        height: 800px;
         border: 1px solid red;
         background: #0B182B;
         margin: auto;
@@ -167,6 +167,7 @@ body {
         display: inline-block;
         width: 0px;
         height: 500px;
+        transform: translateX(100px);
         border: 1px solid yellow;
         padding: 5px;
         align-items: center; }
@@ -200,15 +201,13 @@ body {
               margin-left: 8px; }
 
 .expand {
-  position: relative;
-  left: 0;
-  top: 0;
-  border: 1px solid red;
-  animation: expand;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  will-change: transform; }
+  width: 0px;
+  height: 500px;
+  margin-left: 100px;
+  padding: 5px;
+  display: inline-block;
+  border: 1px solid yellow;
+  align-items: center; }
 
 @keyframes expand {
   100% {
