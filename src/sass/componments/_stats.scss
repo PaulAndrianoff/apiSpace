@@ -11,7 +11,7 @@ body
         // left: 0;
         // top: 0;
         width: 100%;
-        height: 10000px;
+        height: 1000px;
         margin: auto;
         background-color: #0B182B;
 
@@ -51,122 +51,100 @@ body
             overflow: hidden;
             margin: auto;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
 
-            .wrapper-map-and-graph
+
+            .section-map
             {
-                position: relative;
-                min-width: 700px;
-                height: 700px;
-                border-right: 3px solid  #00BBFF;
-                flex-grow: 2;
-                flex-shrink: 2;
+                display: inline-block;
+                width: 900px;
+                height: 600px;
+                border: 1px solid red;
+                background: #0B182B;
+                margin: auto;
+                border-radius: 10px;
+                padding: 2px;
+                // display: block;
 
-                .section-map
+
+                #vmap
                 {
                     position: absolute;
+                    // left: 0;
                     width: 100%;
-                    height: 70%;
-                    border: 1px solid red;
-                    background: #0B182B;
-                    margin: auto;
+                    height: 100%;
                     border-radius: 10px;
-                    padding: 2px;
-                    // display: block;
-
-
-                    #vmap
-                    {
-                        position: absolute;
-                        // left: 0;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 10px;
-                    }
-
-                    .jqvmap-label
-                    {
-                        position: absolute;
-                        display: none;
-                        -webkit-border-radius: 3px;
-                        -moz-border-radius: 3px;
-                        border-radius: 3px;
-                        background: #292929;
-                        color: white;
-                        font-family: sans-serif, Verdana;
-                        font-size: smaller;
-                        padding: 3px;
-                        pointer-events:none;
-                    }
-                    .jqvmap-pin
-                    {
-                        pointer-events:none;
-                    }
-                    .jqvmap-zoomin, .jqvmap-zoomout
-                    {
-                        position: absolute;
-                        left: 10px;
-                        -webkit-border-radius: 3px;
-                        -moz-border-radius: 3px;
-                        border-radius: 3px;
-                        background: #000000;
-                        padding: 3px;
-                        color: white;
-                        width: 20px;
-                        height: 20px;
-                        cursor: pointer;
-                        line-height: 13px;
-                        text-align: center;
-                        margin-top: 5px;
-                    }
-                    .jqvmap-zoomin
-                    {
-                        top: 10px;
-                    }
-                    .jqvmap-zoomout
-                    {
-                        top: 30px;
-                    }
-                    .jqvmap-region
-                    {
-                        cursor: pointer;
-                    }
-
-                    .jqvmap-ajax_response
-                    {
-                        width: 100%;
-                        height: 500px;
-                    }
-
-
                 }
 
-                // .section-bottom
-                // {
-                //     position: absolute;
-                //     height: 300px;
-                //     width: 100%;
-                //     background-color: #0B1E3B;
-                //     border-top: 3px solid #00BBFF;
-                //     // display: block;
-                // }
-                //
+                .jqvmap-label
+                {
+                    position: absolute;
+                    display: none;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                    background: #292929;
+                    color: white;
+                    font-family: sans-serif, Verdana;
+                    font-size: smaller;
+                    padding: 3px;
+                    pointer-events:none;
+                }
+                .jqvmap-pin
+                {
+                    pointer-events:none;
+                }
+                .jqvmap-zoomin, .jqvmap-zoomout
+                {
+                    position: absolute;
+                    left: 10px;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                    background: #000000;
+                    padding: 3px;
+                    color: white;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    line-height: 13px;
+                    text-align: center;
+                    margin-top: 5px;
+                }
+                .jqvmap-zoomin
+                {
+                    top: 10px;
+                }
+                .jqvmap-zoomout
+                {
+                    top: 30px;
+                }
+                .jqvmap-region
+                {
+                    cursor: pointer;
+                }
 
-
+                .jqvmap-ajax_response
+                {
+                    width: 100%;
+                    height: 500px;
+                }
 
             }
+
+
             .section-right
             {
-                flex-grow: 1;
-                flex-shrink: 1;
-                width: 600px;
+                display: inline-block;
+                width: 0px;
                 height: 500px;
                 border: 1px solid yellow;
                 padding: 5px;
                 align-items: center;
 
 
-                .agency {
+                .agency
+                {
                     width: 100%;
                     height: 50%;
                     display: flex;

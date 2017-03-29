@@ -1,11 +1,13 @@
-/*!
- * JQVMap: jQuery Vector Map Library
- * @author JQVMap <me@peterschmalfeldt.com>
- * @version 1.5.1
- * @link http://jqvmap.com
- * @license https://github.com/manifestinteractive/jqvmap/blob/master/LICENSE
- * @builddate 2016/06/02
- */
+function openNav() {
+    document.querySelector(".section-right").style.width = "600px";
+    document.querySelector(".paragraph-stats-presentation").style.marginRight = "600px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginRight= "0";
+}
+
 
 var VectorCanvas = function (width, height, params) {
   this.mode = window.SVGAngle ? 'svg' : 'vml';
@@ -588,6 +590,7 @@ JQVMap.prototype.deselect = function (cc, path) {
       this.selectedRegions.splice(this.selectedRegions.indexOf(key), 1);
       this.countries[key].currentFillColor = this.color;
       this.countries[key].setFill(this.color);
+      closeNav();
     }
   }
 };
@@ -910,6 +913,8 @@ JQVMap.prototype.select = function (cc, path) {
       this.selectedRegions.push(cc);
     } else {
       this.selectedRegions = [cc];
+      openNav(); //call the function wihch open the right section
+      console.log(cc); //print abrev contry
     }
 
     jQuery(this.container).trigger('regionSelect.jqvmap', [cc]);

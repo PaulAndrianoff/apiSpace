@@ -85,7 +85,7 @@ body {
   overflow: hidden; }
   body .container-stats {
     width: 100%;
-    height: 10000px;
+    height: 1000px;
     margin: auto;
     background-color: #0B182B; }
     body .container-stats header {
@@ -110,70 +110,62 @@ body {
       overflow: hidden;
       margin: auto;
       display: flex;
-      flex-wrap: wrap; }
-      body .container-stats .main .wrapper-map-and-graph {
-        position: relative;
-        min-width: 700px;
-        height: 700px;
-        border-right: 3px solid  #00BBFF;
-        flex-grow: 2;
-        flex-shrink: 2; }
-        body .container-stats .main .wrapper-map-and-graph .section-map {
+      align-items: center; }
+      body .container-stats .main .section-map {
+        display: inline-block;
+        width: 900px;
+        height: 600px;
+        border: 1px solid red;
+        background: #0B182B;
+        margin: auto;
+        border-radius: 10px;
+        padding: 2px; }
+        body .container-stats .main .section-map #vmap {
           position: absolute;
           width: 100%;
-          height: 70%;
-          border: 1px solid red;
-          background: #0B182B;
-          margin: auto;
-          border-radius: 10px;
-          padding: 2px; }
-          body .container-stats .main .wrapper-map-and-graph .section-map #vmap {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px; }
-          body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-label {
-            position: absolute;
-            display: none;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            background: #292929;
-            color: white;
-            font-family: sans-serif, Verdana;
-            font-size: smaller;
-            padding: 3px;
-            pointer-events: none; }
-          body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-pin {
-            pointer-events: none; }
-          body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-zoomin, body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-zoomout {
-            position: absolute;
-            left: 10px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            background: #000000;
-            padding: 3px;
-            color: white;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            line-height: 13px;
-            text-align: center;
-            margin-top: 5px; }
-          body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-zoomin {
-            top: 10px; }
-          body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-zoomout {
-            top: 30px; }
-          body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-region {
-            cursor: pointer; }
-          body .container-stats .main .wrapper-map-and-graph .section-map .jqvmap-ajax_response {
-            width: 100%;
-            height: 500px; }
+          height: 100%;
+          border-radius: 10px; }
+        body .container-stats .main .section-map .jqvmap-label {
+          position: absolute;
+          display: none;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          background: #292929;
+          color: white;
+          font-family: sans-serif, Verdana;
+          font-size: smaller;
+          padding: 3px;
+          pointer-events: none; }
+        body .container-stats .main .section-map .jqvmap-pin {
+          pointer-events: none; }
+        body .container-stats .main .section-map .jqvmap-zoomin, body .container-stats .main .section-map .jqvmap-zoomout {
+          position: absolute;
+          left: 10px;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          background: #000000;
+          padding: 3px;
+          color: white;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          line-height: 13px;
+          text-align: center;
+          margin-top: 5px; }
+        body .container-stats .main .section-map .jqvmap-zoomin {
+          top: 10px; }
+        body .container-stats .main .section-map .jqvmap-zoomout {
+          top: 30px; }
+        body .container-stats .main .section-map .jqvmap-region {
+          cursor: pointer; }
+        body .container-stats .main .section-map .jqvmap-ajax_response {
+          width: 100%;
+          height: 500px; }
       body .container-stats .main .section-right {
-        flex-grow: 1;
-        flex-shrink: 1;
-        width: 600px;
+        display: inline-block;
+        width: 0px;
         height: 500px;
         border: 1px solid yellow;
         padding: 5px;

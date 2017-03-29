@@ -17,17 +17,13 @@
         </header>
 
         <div class="main">
-            <div class="wrapper-map-and-graph">
+
                 <section class="section-map">
                     <!-- MAP : -->
 
                     <div id="vmap"></div>
 
                 </section>
-                <section class="section-bottom">
-                    grap
-                </section>
-            </div>
             <section class="section-right">
                 <article class="agency agency-one">
                     <div class="description-agency">
