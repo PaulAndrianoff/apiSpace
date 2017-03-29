@@ -19,10 +19,11 @@ jQuery(document).ready(function () {
 function openNav() {
     document.querySelector(".section-right").style.transform = "translateX(0)";
     document.querySelector(".section-right").style.width = "600px";
+	console.log("open");
 }
 
 function closeNav() {
-    console.log('ok');
+    console.log('close');
         document.querySelector(".section-right").style.transform = "translateX(100px)";
     document.querySelector(".section-right").style.width = "0";
 }
@@ -606,7 +607,7 @@ JQVMap.prototype.deselect = function (cc, path) {
         jQuery(this.container).trigger('regionDeselect.jqvmap', [cc]);
         path.currentFillColor = path.getOriginalFill();
         path.setFill(path.getOriginalFill());
-        closeNav();
+        closeNav(); // close right menu
     } else {
         for (var key in this.countries) {
             this.selectedRegions.splice(this.selectedRegions.indexOf(key), 1);

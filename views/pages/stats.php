@@ -1,3 +1,8 @@
+
+<?php 
+include_once "../../includes/config.php";
+include_once "../../api_data_retrieve.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,6 +70,16 @@
 <script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
 <script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
 <script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
-<script src='../../src/js/main.js'></script>
-<script src='../../src/js/animation_stats.js'></script>
+
+<script type="text/javascript">
+		var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
+		var countries  = JSON.parse('<?php echo json_encode($location) ;?>');
+		var launches  = JSON.parse('<?php echo json_encode($launch) ;?>');
+		var missions  = JSON.parse('<?php echo json_encode($mission) ;?>');
+		var pads  = JSON.parse('<?php echo json_encode($pad) ;?>');
+		var rockets  = JSON.parse('<?php echo json_encode($rocket) ;?>');
+		var status  = JSON.parse('<?php echo json_encode($status) ;?>');
+	console.log(status);
+</script>
+	
 </html>
