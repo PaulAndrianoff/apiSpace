@@ -39,7 +39,7 @@ gulp.task( 'js', function()
 gulp.task( 'watch', function()
 {
     gulp.watch( './src/styles/style.css', [ 'css' ] );
-    gulp.watch('./src/sass/*.scss', ['sass']);
+    gulp.watch('./src/sass/**/*.scss', ['sass']);
     gulp.watch( [ './src/js/**', '!./src/js/main.min.js' ], [ 'js' ] );
 } );
 
