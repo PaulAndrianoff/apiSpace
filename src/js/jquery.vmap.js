@@ -162,7 +162,7 @@ var JQVMap = function (params) {
 
     map.countries = [];
 
-    for (var key in mapData.paths) {
+    for (var key in mapData.paths) { //Set key attribut to all countries
         var path = this.canvas.createPath({
             path: mapData.paths[key].path
         });
@@ -198,7 +198,7 @@ var JQVMap = function (params) {
                 jQuery(params.container).trigger(labelShowEvent, [map.label, code]);
 
                 if (!labelShowEvent.isDefaultPrevented()) {
-                    map.label.show();
+                    map.label.attr( "style", "position: absolute; display: block; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;  background: #292929; color: white;  font-family: sans-serif, Verdana; font-size: smaller; padding: 3px; pointer-events: none");
                     map.labelWidth = map.label.width();
                     map.labelHeight = map.label.height();
                 }

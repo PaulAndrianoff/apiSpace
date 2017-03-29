@@ -126,7 +126,7 @@ body .container-stats {
         height: 100%;
         border-radius: 10px; }
       body .container-stats .main .section-map .jqvmap-label {
-        position: absolute;
+        position: absolute; 
         display: none;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
