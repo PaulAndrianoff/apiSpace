@@ -1,5 +1,9 @@
 <?php
 include_once "includes/config.php";
+
+set_time_limit(0);
+ini_set('memory_limit', '2000000M');
+
 $headers = array( 
 	'Accept: application/json'
 );
@@ -84,6 +88,13 @@ else
 		$prepare->bindValue(":description", $_mission->description);
 		$prepare->bindValue(":id_agency", !empty($_mission->agencies)? $_mission->agencies[0]->id : 0);
 		$prepare->execute();
+		$curent_agency = $_mission->agencies;
+		foreach($curent_agency as $_agency){
+			$prepare = $pdo->prepare("INSERT INTO agency (name, abbrev) VALUES(:name, :abbrev)");
+			$prepare->bindValue(":name", $_agency->name);
+			$prepare->bindValue(":abbrev", $_agency->abbrev);
+			$prepare->execute();
+		}
 	}
 }
 
@@ -187,6 +198,10 @@ else
 			$prepare->bindValue(":abbrev", $_agency->abbrev);
 			$prepare->execute();
 		}
+		$prepare = $pdo->prepare("INSERT INTO rockets (name, image_url) VALUES(:name, :image_url)");
+		$prepare->bindValue(":name", $_launch->rocket->name);
+		$prepare->bindValue(":image_url", $_launch->rocket->imageURL);
+		$prepare->execute();
 	}
 }
 
@@ -208,7 +223,9 @@ else
 	$status = curl_exec($curl);
 	curl_close($curl);
 	file_put_contents($path_status, $status);
+
 	$status = json_decode($status);
+
 	foreach($status->types as $_status){
 		$prepare = $pdo->prepare("INSERT INTO status (name, description) VALUES(:name, :description)");
 		$prepare->bindValue(":name", $_status->name);
@@ -216,11 +233,62 @@ else
 		$prepare->execute();
 	}
 }
-$query = $pdo->prepare("SELECT pads.name as pads_name, agency.name as agency_name FROM pads, agency");
+
+//retrieves all agencies from data-base
+$query = $pdo->prepare("SELECT agency.id as agency_id, agency.name as agency_name, agency.abbrev as agency_abbrev FROM agency");
 $query->execute();
-$result = $query->fetchAll();
-echo "<pre>";
-print_r($result);
-echo "</pre>";
-//
+$agency = $query->fetchAll();
+
+//retrieves all locations from data-base
+$query = $pdo->prepare("SELECT locations.id as location_id, locations.name as location_name, locations.abbrev as location_abbrev FROM locations");
+$query->execute();
+$location = $query->fetchAll();
+
+//retrieves all launches from data-base
+$query = $pdo->prepare("SELECT launches.id as launche_id, launches.name as launche_name, launches.time_start as launche_time_start, launches.time_end as launche_time_end, launches.id_status as launche_id_status, launches.id_agency as launche_id_agency, launches.id_pad as launche_id_pad, launches.id_rocket as launche_id_rocket FROM launches");
+$query->execute();
+$launch = $query->fetchAll();
+
+//retrieves all missions from data-base
+$query = $pdo->prepare("SELECT missions.id as mission_id, missions.name as mission_name, missions.description as mission_description, missions.id_agency as mission_id_agency FROM missions");
+$query->execute();
+$mission = $query->fetchAll();
+
+//retrieves all pads from data-base
+$query = $pdo->prepare("SELECT pads.id as pad_id, pads.name as pad_name, pads.latitude as pad_latitude, pads.longitude as pad_longitude, pads.id_agency as pad_id_agency, pads.id_location as pad_id_location FROM pads");
+$query->execute();
+$pad = $query->fetchAll();
+
+//retrieves all rockets from data-base
+$query = $pdo->prepare("SELECT rockets.id as rocket_id, rockets.name as rocket_name, rockets.image_url as rocket_image_url FROM rockets");
+$query->execute();
+$rocket = $query->fetchAll();
+
+//retrieves all status from data-base
+$query = $pdo->prepare("SELECT status.id as status_id, status.name as status_name, status.description as status_description FROM status");
+$query->execute();
+$status = $query->fetchAll();
+
 header("location: home.php");
+
+?>
+
+
+<html>
+
+	<script type="text/javascript">
+		var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
+		var countries  = JSON.parse('<?php echo json_encode($location) ;?>');
+		var launches  = JSON.parse('<?php echo json_encode($launch) ;?>');
+		var missions  = JSON.parse('<?php echo json_encode($mission) ;?>');
+		var pads  = JSON.parse('<?php echo json_encode($pad) ;?>');
+		var rockets  = JSON.parse('<?php echo json_encode($rocket) ;?>');
+		var status  = JSON.parse('<?php echo json_encode($status) ;?>');
+		console.log(status);
+	</script>
+
+
+
+
+
+</html>
