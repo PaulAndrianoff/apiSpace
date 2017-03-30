@@ -29,17 +29,12 @@
             </section>
             <section class="section-right">
                 <article class="agency agency-one">
-                    <div class="description-agency">
-                    </div>
-                    <div class="graphic-agency">
-                        <h4 class="title_agence">Title-graphic</h4>
-                    </div>
+                    <div class="description-agency"></div>
+                    <div class="graphic-agency"></div>
                 </article>
                 <article class="agency agency-two">
                     <div class="description-agency"></div>
-                    <div class="graphic-agency">
-                        <h4 class="title_agence">Title-graphic</h4>
-                    </div>
+                    <div class="graphic-agency"></div>
 
                 </article>
             </section>
