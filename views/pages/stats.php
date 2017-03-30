@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Space Stats</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../../src/build/reset.min.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../src/build/style.min.css">
@@ -39,9 +40,7 @@
                             </svg>
                         </figure>
                     </div>
-                    <div class="wrapper-close">
-                        <a href="#" class="close">X</a>
-                    </div>
+
                 </article>
                 <article class="agency agency-two">
                     <div class="description-agency">
@@ -49,9 +48,7 @@
                     </div>
                     <div class="graphic-agency">
                     </div>
-                    <div class="wrapper-close">
-                        <a href="#" class="close">X</a>
-                    </div>
+
                 </article>
             </section>
         </div>

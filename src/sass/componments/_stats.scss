@@ -1,213 +1,221 @@
-html{
-    body
+
+body
+{
+    position: relative;
+    min-width: 960px;
+    max-width: 100vw;
+    height: 100vh;
+    // CONTAINER
+    .container-stats
     {
-        position: relative;
-        min-width: 960px;
-        min-height: 100vh;
-        // CONTAINER
-        .container-stats
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background-color: #0B182B;
+
+        // HEADER
+        header
         {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            margin: auto;
-            background-color: #0B182B;
 
-            // HEADER
-            header
+            height: 100px;
+            border-bottom: 3px solid #00BBFF;
+
+            .title-stats
             {
-
-                height: 100px;
-                border-bottom: 3px solid #00BBFF;
-
-                .title-stats
-                {
-                    font-family: earthorbiter;
-                    line-height: 50px;
-                    text-align: center;
-                    font-size: 40px;
-                    color:#00BBFF;
-                    letter-spacing: 20px;
-                }
-
-                .paragraph-stats-presentation
-                {
-                    line-height: 30px;
-                    letter-spacing:10px;
-                    text-align: center;
-                    color:#fefefe;
-                    font-family: 'lato', sans-serif;
-
-                }
+                font-family: earthorbiter;
+                line-height: 50px;
+                text-align: center;
+                font-size: 40px;
+                color:#00BBFF;
+                letter-spacing: 20px;
             }
 
-            //CONTENT
-            .main
+            .paragraph-stats-presentation
             {
-                position: relative;
-                height: 700px;
-                width: 100%;
-                overflow: hidden;
-                margin: auto;
-                margin-top: 30px;
-                display: flex;
-                flex-direction: row;
-                align-items: stretch;
-                justify-content: center;
-
-
-                .section-map
-                {
-                    // display: inline-block;
-                    position: absolute;
-                    left: 0;
-                    width: 50%;
-                    height: 100%;
-                    border: 1px solid red;
-                    background: #0B182B;
-                    border-radius: 10px;
-                    padding: 2px;
-                    transform: translateX(50%);
-                    will-change : transform;
-                    transform-origin: center;
-
-
-                    #vmap
-                    {
-                        position: absolute;
-                        // left: 0;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 10px;
-                    }
-
-                    .jqvmap-label
-                    {
-                        position: absolute;
-                        display: none;
-                        -webkit-border-radius: 3px;
-                        -moz-border-radius: 3px;
-                        border-radius: 3px;
-                        background: #292929;
-                        color: white;
-                        font-family: sans-serif, Verdana;
-                        font-size: smaller;
-                        padding: 3px;
-                        pointer-events:none;
-                    }
-                    .jqvmap-pin
-                    {
-                        pointer-events:none;
-                    }
-                    .jqvmap-zoomin, .jqvmap-zoomout
-                    {
-                        position: absolute;
-                        left: 10px;
-                        -webkit-border-radius: 3px;
-                        -moz-border-radius: 3px;
-                        border-radius: 3px;
-                        background: #000000;
-                        padding: 3px;
-                        color: white;
-                        width: 20px;
-                        height: 20px;
-                        cursor: pointer;
-                        line-height: 13px;
-                        text-align: center;
-                        margin-top: 5px;
-                    }
-                    .jqvmap-zoomin
-                    {
-                        top: 10px;
-                    }
-                    .jqvmap-zoomout
-                    {
-                        top: 30px;
-                    }
-                    .jqvmap-region
-                    {
-                        cursor: pointer;
-                    }
-
-                    .jqvmap-ajax_response
-                    {
-                        width: 100%;
-                        height: 500px;
-                    }
-
-                }
-
-
-
-
-                .section-right
-                {
-                    position: absolute;
-                    display: inline-block;
-                    right: 0;
-                    width: 50%;
-                    height: 100%;
-                    border: 1px solid yellow;
-                    padding: 5px;
-                    transform: scaleX(0);
-
-
-
-                    .agency
-                    {
-                        width: 100%;
-                        height: 50%;
-                        display: flex;
-                        color: white;
-
-
-                        .agency-one
-                        {
-                            margin-bottom: 10px;
-                        }
-
-                        .description-agency
-                        {
-                            text-align: center;
-                            display: inline-block;
-                            width: 150px;
-                            height: 100%;
-                            border: 1px solid red;
-
-
-                        }
-                        .graphic-agency
-                        {
-                            display: inline-block;
-                            width: 400px;
-                            height: 100%;
-                            margin-left: 10px;
-                            border: 1px solid red;
-                        }
-
-                        .wrapper-close
-                        {
-                            width: 30px;
-                            height: 100%;
-                            margin-left: 7px;
-                            display: flex;
-                            align-items: center;
-                            border: 1px solid red;
-                            a
-                            {
-                                margin-left: 8px;
-                            }
-                        }
-
-                    }
-                }
-                // .section-right-scale{
-                //     transform-origin: right;
-                //     transform: scale(0);
-                //     will-change : transform;
-                // }
+                line-height: 30px;
+                letter-spacing:10px;
+                text-align: center;
+                color:#fefefe;
+                font-family: 'lato', sans-serif;
 
             }
         }
+
+        //CONTENT
+        .main
+        {
+            position: relative;
+            height: 700px;
+            width: 100%;
+            overflow: hidden;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            flex-wrap: wrap;
+
+
+            .section-map
+            {
+                // display: inline-block;
+                position: absolute;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                border: 1px solid red;
+                background: #0B182B;
+                border-radius: 10px;
+                padding: 2px;
+                transform: translateX(50%);
+                will-change : transform;
+                transform-origin: center;
+
+
+                #vmap
+                {
+                    position: absolute;
+                    // left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+
+                .jqvmap-label
+                {
+                    position: absolute;
+                    display: none;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                    background: #292929;
+                    color: white;
+                    font-family: sans-serif, Verdana;
+                    font-size: smaller;
+                    padding: 3px;
+                    pointer-events:none;
+                }
+                .jqvmap-pin
+                {
+                    pointer-events:none;
+                }
+                .jqvmap-zoomin, .jqvmap-zoomout
+                {
+                    position: absolute;
+                    left: 10px;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                    background: #000000;
+                    padding: 3px;
+                    color: white;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    line-height: 13px;
+                    text-align: center;
+                    margin-top: 5px;
+                }
+                .jqvmap-zoomin
+                {
+                    top: 10px;
+                }
+                .jqvmap-zoomout
+                {
+                    top: 30px;
+                }
+                .jqvmap-region
+                {
+                    cursor: pointer;
+                }
+
+                .jqvmap-ajax_response
+                {
+                    width: 100%;
+                    height: 500px;
+                }
+
+            }
+
+
+
+
+            .section-right
+            {
+                position: absolute;
+                display: inline-block;
+                right: 0;
+                width: 50%;
+                height: 100%;
+                border: 1px solid yellow;
+                padding: 5px;
+                transform: scaleX(0);
+
+
+
+                .agency
+                {
+                    position: relative;
+                    width: 100%;
+                    height: 50%;
+                    display: flex;
+                    color: white;
+
+
+                    .agency-one
+                    {
+                        margin-bottom: 10px;
+                    }
+
+                    .description-agency
+                    {
+                        text-align: center;
+                        display: inline-block;
+                        width: 35%;
+                        height: 100%;
+                        border: 1px solid red;
+
+
+                    }
+                    .graphic-agency
+                    {
+                        display: inline-block;
+                        width: 65%;
+                        height: 100%;
+                        margin-left: 10px;
+                        border: 1px solid red;
+                    }
+
+                    .wrapper-close
+                    {
+                        width: 30px;
+                        height: 100%;
+                        margin-left: 7px;
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid red;
+                        a
+                        {
+                            margin-left: 8px;
+                        }
+                    }
+
+                }
+            }
+            // .section-right-scale{
+            //     transform-origin: right;
+            //     transform: scale(0);
+            //     will-change : transform;
+            // }
+
+        }
     }
+}
+
+
+// RESPONSIVE
+@media query {
+
 }
