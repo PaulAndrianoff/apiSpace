@@ -1,35 +1,6 @@
-// .wrapper {
-//     width: 960px;
-//     border: 1px solid red;
-//     margin: auto;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: stretch;
-//     justify-content: center;
-// }
-//
-// div {
-//
-//     border: 1px solid black
-// }
-
-
-.rouge {
-    width: 100px;
-    height: 100px;
-    transform: translateX(100%);
-    will-change : transform;
-    transform-origin: center;
-}
-.bleu {
-    /*display: none;*/
-    width: 150px;
-    height: 150px;
-    transform: scaleX(0);
-    transform-origin: right;
-    will-change : transform;
-
-}
+$blue_clear: #00BBFF;
+$blue_dark: #0B182B;
+$blue_border: #979797;
 
 
 
@@ -38,30 +9,30 @@
 
 .apparition-map{
     transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
     transform: translateX(0%)!important;
 }
 .delete-map{
     transform-origin: center;
     transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
     transform: translateX(50%) !important;
 }
 
 .apparition-right{
     transform-origin: right;
     transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
     transform: scaleX(1) !important;
 }
 
 .delete-right{
     transform-origin: right;
     transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
     transform: scaleX(0);
 }

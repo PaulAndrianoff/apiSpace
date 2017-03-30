@@ -30,23 +30,34 @@
             <section class="section-right">
                 <article class="agency agency-one">
                     <div class="description-agency">
-                        <h3>agency a</h3>
+                        <h3 class="title_agence">Nasa</h3>
+                        <div class="agency-name"><p>Name :</p></div>
+                        <div class="creation-date"><p>Date of creation :</p></div>
+                        <div class="creation-date"><p>Annual budget :</p></div>
+                        <div class="missions-number"><p>Mission number :</p></div>
+                        <div class="pad-name"><p>Pad number :</p></div>
+                        <div class="pad-name"><p>Geographic coordinate :</p></div>
+                        <div class="pad-name"><p>Gravity :</p></div>
+                        <div class="number-rocket-sent">Number of launched :</div>
                     </div>
                     <div class="graphic-agency">
-                        <figure class="chart" data-percent="75">
-                            <figcaption>graph1</figcaption>
-                            <svg width="200" height="200">
-                                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
-                            </svg>
-                        </figure>
+                        <h4 class="title_agence">Title-graphic</h4>
                     </div>
-
                 </article>
                 <article class="agency agency-two">
                     <div class="description-agency">
-                        <h3>agency a</h3>
+                        <h3 class="title_agence">Nasa 2</h3>
+                        <div class="agency-name"><p>Name :</p></div>
+                        <div class="creation-date"><p>Date of creation :</p></div>
+                        <div class="creation-date"><p>Annual budget :</p></div>
+                        <div class="missions-number"><p>Mission number :</p></div>
+                        <div class="pad-name"><p>Pad number :</p></div>
+                        <div class="pad-name"><p>Geographic coordinate :</p></div>
+                        <div class="pad-name"><p>Gravity :</p></div>
+                        <div class="number-rocket-sent">Number of launched :</div>
                     </div>
                     <div class="graphic-agency">
+                        <h4 class="title_agence">Title-graphic</h4>
                     </div>
 
                 </article>
@@ -69,9 +80,9 @@
     var pads  = JSON.parse('<?php echo json_encode($pad) ;?>');
     var rockets  = JSON.parse('<?php echo json_encode($rocket) ;?>');
     var status  = JSON.parse('<?php echo json_encode($status) ;?>');
-    </script>
+</script>
 
-    <script type="text/javascript" src="../../src/js/main.js"></script> -->
+<script type="text/javascript" src="../../src/js/main.js"></script> -->
 
 </body>
 </html>
