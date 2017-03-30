@@ -16,17 +16,40 @@ jQuery(document).ready(function () {
 /***********************************************************************/
 /*DEBUT FCT AFFICHER SIDEBAR*/
 /***********************************************************************/
-// function openNav() {
-//     document.querySelector(".section-right").style.transform = "translateX(0)";
-//     document.querySelector(".section-right").style.width = "600px";
-// 	console.log("open");
-// }
-//
-// function closeNav() {
-//     console.log('close');
-//         document.querySelector(".section-right").style.transform = "translateX(100px)";
-//     document.querySelector(".section-right").style.width = "0";
-// }
+
+var section_map = document.querySelector('.section-map'); //rouge
+var section_right = document.querySelector('.section-right'); //bleu
+var last_cc=null;
+// var test_button = document.querySelector('.test');
+function stats_animation(cc) {
+    if (last_cc == cc) {
+
+        if (section_right.classList.contains('apparition-right') && section_map.classList.contains('apparition-map')) {
+            console.log("delete");
+            section_map.classList.add('delete-map');
+            section_map.classList.remove('apparition-map');
+
+            section_right.classList.add('delete-right');
+            section_right.classList.remove('apparition-right');
+
+            window.setTimeout(function(){
+                section_map.classList.add('section-map');
+                section_map.classList.remove('delete-map');
+                section_right.classList.add('section-right');
+                section_right.classList.remove('delete-right');
+
+                last_cc =null;
+            }, 1100);
+        }
+    }
+    else {
+        section_map.classList.add('apparition-map');
+        section_right.classList.add('apparition-right');
+        last_cc = cc;
+
+    }
+
+}
 /***********************************************************************/
 /*FIN FCT AFFICHER SIDEBAR*/
 /***********************************************************************/
@@ -225,6 +248,7 @@ var JQVMap = function (params) {
             for (var keyPath in mapData.paths) {
                 map.countries[keyPath].currentFillColor = map.countries[keyPath].getOriginalFill();
                 map.countries[keyPath].setFill(map.countries[keyPath].getOriginalFill());
+
             }
         }
 
@@ -233,6 +257,7 @@ var JQVMap = function (params) {
                 map.deselect(code, targetPath);
             } else {
                 map.select(code, targetPath);
+
             }
         }
     });
@@ -607,7 +632,7 @@ JQVMap.prototype.deselect = function (cc, path) {
         jQuery(this.container).trigger('regionDeselect.jqvmap', [cc]);
         path.currentFillColor = path.getOriginalFill();
         path.setFill(path.getOriginalFill());
-        closeNav(); // close right menu
+        stats_animation(cc); // close right menu
     } else {
         for (var key in this.countries) {
             this.selectedRegions.splice(this.selectedRegions.indexOf(key), 1);
@@ -936,9 +961,9 @@ JQVMap.prototype.select = function (cc, path) {
             this.selectedRegions.push(cc);
         } else {
             this.selectedRegions = [cc];
-            openNav(); //call the function wihch open the right section
-//            console.log(cc); //print abrev contry
-					
+            stats_animation(cc); //call the function wihch open the right section
+            //    console.log(cc); //print abrev contry
+
         }
 
         jQuery(this.container).trigger('regionSelect.jqvmap', [cc]);

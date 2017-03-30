@@ -1,7 +1,7 @@
 
 <?php
-include_once "../../includes/config.php";
-include_once "../../api_data_retrieve.php";
+ include_once "../../includes/config.php";
+ include_once "../../api_data_retrieve.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,6 @@ include_once "../../api_data_retrieve.php";
 					CHECK OUT THE CRITERIA OF YOUR CHOICE BY NAVIGATING ON THE WORLD MAP
 				</p>
 			</header>
-
 			<div class="main">
 				<section class="section-map">
 					<a href="#" class="test">test</a>
@@ -62,14 +61,7 @@ include_once "../../api_data_retrieve.php";
 		<script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
 		<script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
 		<script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
-		<script type="text/javascript" src="../../src/js/animation.js"></script>
 
-
-
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
-		<script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
-		<script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
 
 		<script type="text/javascript">
 			var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');

@@ -38,15 +38,15 @@
 
 .apparition-map{
 
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    border: 1px solid red;
-    background: #0B182B;
-    border-radius: 10px;
-    padding: 2px;
+    // position: absolute;
+    // width: 50%;
+    // height: 100%;
+    // border: 1px solid red;
+    // background: #0B182B;
+    // border-radius: 10px;
+    // padding: 2px;
     transition-property: transform;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transition-timing-function: ease;
     transform: translateX(0%)!important;
 }
@@ -60,7 +60,7 @@
     // padding: 2px;
     transform-origin: center;
     transition-property: transform;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transition-timing-function: ease;
     transform: translateX(50%) !important;
 }
@@ -74,7 +74,7 @@
     // padding: 5px;
     transform-origin: right;
     transition-property: transform;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transition-timing-function: ease;
     transform: scaleX(1) !important;
 }
@@ -87,7 +87,7 @@
     // padding: 5px;
     transform-origin: right;
     transition-property: transform;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transition-timing-function: ease;
     transform: scaleX(0);
 }
