@@ -1,7 +1,7 @@
 
 <?php
-include_once "../../includes/config.php";
-include_once "../../api_data_retrieve.php";
+// include_once "../../includes/config.php";
+// include_once "../../api_data_retrieve.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,6 @@ include_once "../../api_data_retrieve.php";
 
         <div class="main">
             <section class="section-map">
-                <a href="#" class="test">test</a>
                 <div id="vmap" class="map"></div>
             </section>
             <section class="section-right">
@@ -62,10 +61,10 @@ include_once "../../api_data_retrieve.php";
     <script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
     <script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
     <script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
-    <script type="text/javascript" src="../../src/js/animation.js"></script>
+    <!-- <script type="text/javascript" src="../../src/js/animation.js"></script> -->
 
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
     var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
     var countries  = JSON.parse('<?php echo json_encode($location) ;?>');
     var launches  = JSON.parse('<?php echo json_encode($launch) ;?>');
@@ -75,7 +74,7 @@ include_once "../../api_data_retrieve.php";
     var status  = JSON.parse('<?php echo json_encode($status) ;?>');
     </script>
 
-    <script type="text/javascript" src="../../src/js/main.js"></script>
+    <script type="text/javascript" src="../../src/js/main.js"></script> -->
 
 </body>
 </html>
