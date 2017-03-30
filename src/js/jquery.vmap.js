@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
 		border: '1px solid black',
 		color: '#ffffff',
 		hoverOpacity: 0.7,
-		selectedColor: '#666666',
+		selectedColor: '#d53939',
 		enableZoom: true,
 		showTooltip: true,
 		scaleColors: ['#C8EEFF', '#006491'],
@@ -13,6 +13,7 @@ jQuery(document).ready(function () {
 		normalizeFunction: 'polynomial'
 	});
 });
+
 /***********************************************************************/
 /*DEBUT FCT AFFICHER SIDEBAR*/
 /***********************************************************************/
@@ -622,7 +623,7 @@ JQVMap.prototype.bindZoomButtons = function () {
 	});
 };
 
-JQVMap.prototype.deselect = function (cc, path) {
+JQVMap.prototype.deselect = function (cc, path) { // deslect country here
 	cc = cc.toLowerCase();
 	path = path || jQuery('#' + this.getCountryId(cc))[0];
 
@@ -952,7 +953,7 @@ JQVMap.prototype.resize = function () {
 	this.transY *= this.baseScale / curBaseScale;
 };
 
-JQVMap.prototype.select = function (cc, path) {
+JQVMap.prototype.select = function (cc, path) { // change country color
 	cc = cc.toLowerCase();
 	path = path || jQuery('#' + this.getCountryId(cc))[0];
 
@@ -962,7 +963,6 @@ JQVMap.prototype.select = function (cc, path) {
 		} else {
 			this.selectedRegions = [cc];
 			stats_animation(cc); //call the function wihch open the right section
-			//    console.log(cc); //print abrev contry
 
 		}
 

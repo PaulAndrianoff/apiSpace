@@ -1,9 +1,10 @@
 <?php
 define("URL", "http://localhost/projet_hetic_0603/"); //Url of the root
 define('DB_HOST','localhost'); // Data-base hosting
-define('DB_NAME','spaceData'); //name of data-base
+define('DB_NAME','spacedata'); //name of data-base
 define('DB_USER','root'); //User name
 define('DB_PASS',''); // '' Default password on phpMyadmin for Windows
+
 try
 {
 	//	 Try to connect to database

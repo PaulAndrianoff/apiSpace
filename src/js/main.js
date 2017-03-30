@@ -4,7 +4,17 @@ var current_section = 1;
 
 var launches_total = launches.length;
 var pads_total = pads.length;
-//console.log(pads_total);
+var missions_total = missions.length;
+var collaboration_total = getCollaborations();
+
+function getCollaborations(){
+	var collaboration = 0;
+	for(var i = 0; i < agency.length; i++)
+	{
+	collaboration += parseInt(agency[i].agency_collaboration);
+	}
+	return collaboration;
+}
 
 var section_one = document.querySelector(".agency.agency-one");
 var section_two = document.querySelector(".agency.agency-two");
@@ -46,8 +56,8 @@ function present_in_array(value, array)
 
 function show_current_agency(id)
 {
-	var text = "";
 	console.log(id);
+	var text = "";
 	if(current_section == 1)
 	{
 		if(present_in_array(id, all_agency_id))
@@ -71,14 +81,29 @@ function show_current_agency(id)
 			launches_local = launches_local.toFixed(2);
 
 			graph_one[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + launches_local + ")";
-			graph_one[0].querySelector(".graphic-agency-title").innerHTML = launches_local + "% of local_launches";
-			
+			graph_one[0].querySelector(".graphic-agency-title").innerHTML = launches_local*100 + "% of local_launches";
+
 			//Graph of pads  
 			var pads_local = all_agency[id].pads.length / pads_total;
 			pads_local = pads_local.toFixed(2);
+			var pads_purcent = pads_local*100;
 
 			graph_one[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + pads_local + ")";
-			graph_one[1].querySelector(".graphic-agency-title").innerHTML = pads_local + "% of all pads";
+			graph_one[1].querySelector(".graphic-agency-title").innerHTML = Math.round(pads_purcent) + "% of all pads in the world";
+
+			//Graph of missions  
+			var mission_int = all_agency[id].misisons.length / missions_total;
+			mission_int = mission_int.toFixed(2);
+
+			graph_one[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + mission_int + ")";
+			graph_one[2].querySelector(".graphic-agency-title").innerHTML = mission_int*100 + "% of all missions in the world";
+
+			//Graph of collaborations  
+			var collaboration_int = parseInt(all_agency[id].collaboration)/ collaboration_total;
+			collaboration_int = collaboration_int.toFixed(2);
+
+			graph_one[3].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + collaboration_int + ")";
+			graph_one[3].querySelector(".graphic-agency-title").innerHTML = collaboration_int*100 + "% of all collaborations in the world";
 		} 
 		else
 		{
@@ -87,10 +112,16 @@ function show_current_agency(id)
 
 
 			graph_one[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
-			graph_one[0].querySelector(".graphic-agency-title").innerHTML = "0.00% of local_launches";
+			graph_one[0].querySelector(".graphic-agency-title").innerHTML = "0% of local_launches";
 
 			graph_one[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
-			graph_one[1].querySelector(".graphic-agency-title").innerHTML = "0.00% of all pads";
+			graph_one[1].querySelector(".graphic-agency-title").innerHTML = "0% of all pads in the world";
+
+			graph_one[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_one[2].querySelector(".graphic-agency-title").innerHTML = "0% of all missions in the world";
+			
+			graph_one[3].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_one[3].querySelector(".graphic-agency-title").innerHTML = "0% of all collaborations in the world";
 		}
 		current_section = 2;
 	}
@@ -110,19 +141,35 @@ function show_current_agency(id)
 			var launches_local = 0;
 			if(all_agency[id].launches.length > 0)
 			{
+				//Graph of local launches
 				var launches_local = all_agency[id].launches.length / (all_agency[id].launches.length + all_agency[id].pads_launches.length);
 			}
 			launches_local = launches_local.toFixed(2);
 
 			graph_two[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + launches_local + ")";
-			graph_two[0].querySelector(".graphic-agency-title").innerHTML = launches_local + "% of local_launches";
+			graph_two[0].querySelector(".graphic-agency-title").innerHTML = launches_local*100 + "% of local_launches";
 
-			//Graph of local launches 
+			//Graph of local pads 
 			var pads_local = all_agency[id].pads.length / pads_total;
 			pads_local = pads_local.toFixed(2);
+			var pads_purcent = pads_local*100;
 
 			graph_two[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + pads_local + ")";
-			graph_two[1].querySelector(".graphic-agency-title").innerHTML = pads_local + "% of local_launches";
+			graph_two[1].querySelector(".graphic-agency-title").innerHTML = Math.round(pads_purcent) + "% of all pads in the world";
+
+			//Graph of missions  
+			var mission_int = all_agency[id].misisons.length / missions_total;
+			mission_int = mission_int.toFixed(2);
+
+			graph_two[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + mission_int + ")";
+			graph_two[2].querySelector(".graphic-agency-title").innerHTML = mission_int*100 + "% of all missions in the world";
+			
+			//Graph of collaborations  
+			var collaboration_int = parseInt(all_agency[id].collaboration)/ collaboration_total;
+			collaboration_int = collaboration_int.toFixed(2);
+
+			graph_two[3].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + collaboration_int + ")";
+			graph_two[3].querySelector(".graphic-agency-title").innerHTML = collaboration_int*100 + "% of all collaborations in the world";
 		} 
 		else
 		{
@@ -130,10 +177,16 @@ function show_current_agency(id)
 			section_two.querySelector(".description-agency").innerHTML = text;
 
 			graph_two[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
-			graph_two[0].querySelector(".graphic-agency-title").innerHTML = "0.00% of local_launches";
+			graph_two[0].querySelector(".graphic-agency-title").innerHTML = "0% of local_launches";
 
 			graph_two[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
-			graph_two[1].querySelector(".graphic-agency-title").innerHTML = "0.00% of local_launches";
+			graph_two[1].querySelector(".graphic-agency-title").innerHTML = "0% of all pads in the world";
+
+			graph_two[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_two[2].querySelector(".graphic-agency-title").innerHTML = "0% of all missions in the world";
+			
+			graph_two[3].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_two[3].querySelector(".graphic-agency-title").innerHTML = "0% of all collaborations in the world";
 		}
 		current_section = 1;
 	}
@@ -154,8 +207,6 @@ for(var i = 0; i < agency.length; i++)
 	all_agency[current_name] = new agency_stats(agency_current, agency_current_pads_location, agency_current_launches, agency_current_pads_launches, agency_current_missions, agency_current_launches_rockets, agency_current_pads);
 
 	all_agency_id[i] = agency[i].agency_id;
-
-	all_agency[current_name].show_console();
 }
 
 //Retrieves all missions that have the same id_agency has the current agency
