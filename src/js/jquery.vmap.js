@@ -937,7 +937,8 @@ JQVMap.prototype.select = function (cc, path) {
         } else {
             this.selectedRegions = [cc];
             openNav(); //call the function wihch open the right section
-            console.log(cc); //print abrev contry
+//            console.log(cc); //print abrev contry
+					
         }
 
         jQuery(this.container).trigger('regionSelect.jqvmap', [cc]);
