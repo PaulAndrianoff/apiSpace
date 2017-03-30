@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 include_once "../../includes/config.php";
 include_once "../../api_data_retrieve.php";
 ?>
@@ -23,12 +23,9 @@ include_once "../../api_data_retrieve.php";
         </header>
 
         <div class="main">
-
             <section class="section-map">
-                <!-- MAP : -->
-
-                <div id="vmap"></div>
-
+                <a href="#" class="test">test</a>
+                <div id="vmap" class="map"></div>
             </section>
             <section class="section-right">
                 <article class="agency agency-one">
@@ -58,13 +55,17 @@ include_once "../../api_data_retrieve.php";
                     </div>
                 </article>
             </section>
-
-            <!-- <section class="section-right">
-
-        </section> -->
+        </div>
     </div>
-</div>
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
+    <script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
+    <script type="text/javascript" src="../../src/js/animation.js"></script>
+
+
+<<<<<<< HEAD
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
 <script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
@@ -82,6 +83,19 @@ include_once "../../api_data_retrieve.php";
 </script>
 
 <script type="text/javascript" src="../../src/js/main.js"></script>
+=======
+    <script type="text/javascript">
+    var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
+    var countries  = JSON.parse('<?php echo json_encode($location) ;?>');
+    var launches  = JSON.parse('<?php echo json_encode($launch) ;?>');
+    var missions  = JSON.parse('<?php echo json_encode($mission) ;?>');
+    var pads  = JSON.parse('<?php echo json_encode($pad) ;?>');
+    var rockets  = JSON.parse('<?php echo json_encode($rocket) ;?>');
+    var status  = JSON.parse('<?php echo json_encode($status) ;?>');
+    </script>
+
+    <script type="text/javascript" src="../../src/js/main.js"></script>
+>>>>>>> 8a574f355cd26c60307ec7950027dc8bdf92dcee
 
 </body>
 </html>
