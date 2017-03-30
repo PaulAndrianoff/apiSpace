@@ -43,11 +43,23 @@ include_once "../../api_data_retrieve.php";
 									<div class="graphic-agency-current-purcent"></div>
 								</div>
 							</div>
+							<div class="graph-section1">
+								<div class="graphic-agency-title"></div>
+								<div class="graphic-agency-full">
+									<div class="graphic-agency-current-purcent"></div>
+								</div>
+							</div>
 						</div>
 					</article>
 					<article class="agency agency-two">
 						<div class="description-agency"></div>
 						<div class="graphic-agency">
+							<div class="graph-section2">
+								<div class="graphic-agency-title"></div>
+								<div class="graphic-agency-full">
+									<div class="graphic-agency-current-purcent"></div>
+								</div>
+							</div>
 							<div class="graph-section2">
 								<div class="graphic-agency-title"></div>
 								<div class="graphic-agency-full">
