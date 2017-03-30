@@ -65,11 +65,6 @@ include_once "../../api_data_retrieve.php";
     </div>
 </div>
 
-</body>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
-<script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
-<script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
 
 <script type="text/javascript">
 		var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
@@ -79,7 +74,13 @@ include_once "../../api_data_retrieve.php";
 		var pads  = JSON.parse('<?php echo json_encode($pad) ;?>');
 		var rockets  = JSON.parse('<?php echo json_encode($rocket) ;?>');
 		var status  = JSON.parse('<?php echo json_encode($status) ;?>');
-	console.log(status);
 </script>
-	
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
+<script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
+<script type="text/javascript" src="../../src/js/main.js"></script>
+
+</body>
 </html>
