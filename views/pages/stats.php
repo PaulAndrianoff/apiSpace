@@ -1,13 +1,14 @@
 
 <?php
- include_once "../../includes/config.php";
- include_once "../../api_data_retrieve.php";
+include_once "../../includes/config.php";
+include_once "../../api_data_retrieve.php";
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Space Stats</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="stylesheet" href="../../src/build/reset.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="../../src/build/style.min.css">
@@ -21,9 +22,9 @@
 					CHECK OUT THE CRITERIA OF YOUR CHOICE BY NAVIGATING ON THE WORLD MAP
 				</p>
 			</header>
+
 			<div class="main">
 				<section class="section-map">
-					<a href="#" class="test">test</a>
 					<div id="vmap" class="map"></div>
 				</section>
 				<section class="section-right">
@@ -39,9 +40,7 @@
 								</svg>
 							</figure>
 						</div>
-						<div class="wrapper-close">
-							<a href="#" class="close">X</a>
-						</div>
+
 					</article>
 					<article class="agency agency-two">
 						<div class="description-agency">
@@ -49,9 +48,7 @@
 						</div>
 						<div class="graphic-agency">
 						</div>
-						<div class="wrapper-close">
-							<a href="#" class="close">X</a>
-						</div>
+
 					</article>
 				</section>
 			</div>
@@ -61,7 +58,6 @@
 		<script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
 		<script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
 		<script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
-
 
 		<script type="text/javascript">
 			var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
