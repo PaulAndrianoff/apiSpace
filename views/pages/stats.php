@@ -1,7 +1,7 @@
 
 <?php
-// include_once "../../includes/config.php";
-// include_once "../../api_data_retrieve.php";
+include_once "../../includes/config.php";
+include_once "../../api_data_retrieve.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,68 +21,70 @@
             <p class="paragraph-stats-presentation">
                 CHECK OUT THE CRITERIA OF YOUR CHOICE BY NAVIGATING ON THE WORLD MAP
             </p>
-        </header>
-
+        </header>        
         <div class="main">
             <section class="section-map">
                 <div id="vmap" class="map"></div>
             </section>
             <section class="section-right">
                 <article class="agency agency-one">
-                    <div class="description-agency">
-                        <h3 class="title_agence">Nasa</h3>
-                        <div class="agency-name"><p>Name :</p></div>
-                        <div class="creation-date"><p>Date of creation :</p></div>
-                        <div class="creation-date"><p>Annual budget :</p></div>
-                        <div class="missions-number"><p>Mission number :</p></div>
-                        <div class="pad-name"><p>Pad number :</p></div>
-                        <div class="pad-name"><p>Geographic coordinate :</p></div>
-                        <div class="pad-name"><p>Gravity :</p></div>
-                        <div class="number-rocket-sent">Number of launched :</div>
-                    </div>
+                    <div class="description-agency"></div>
                     <div class="graphic-agency">
-                        <h4 class="title_agence">Title-graphic</h4>
+                        <div class="graph-section1">
+                            <div class="graphic-agency-title"></div>
+                            <div class="graphic-agency-full">
+                                <div class="graphic-agency-current-purcent"></div>
+                            </div>
+                        </div>
+                        <div class="graph-section1">
+                            <div class="graphic-agency-title"></div>
+                            <div class="graphic-agency-full">
+                                <div class="graphic-agency-current-purcent"></div>
+                            </div>
+                        </div>
                     </div>
                 </article>
                 <article class="agency agency-two">
-                    <div class="description-agency">
-                        <h3 class="title_agence">Nasa 2</h3>
-                        <div class="agency-name"><p>Name :</p></div>
-                        <div class="creation-date"><p>Date of creation :</p></div>
-                        <div class="creation-date"><p>Annual budget :</p></div>
-                        <div class="missions-number"><p>Mission number :</p></div>
-                        <div class="pad-name"><p>Pad number :</p></div>
-                        <div class="pad-name"><p>Geographic coordinate :</p></div>
-                        <div class="pad-name"><p>Gravity :</p></div>
-                        <div class="number-rocket-sent">Number of launched :</div>
-                    </div>
+                    <div class="description-agency"></div>
                     <div class="graphic-agency">
-                        <h4 class="title_agence">Title-graphic</h4>
+                        <div class="graph-section2">
+                            <div class="graphic-agency-title"></div>
+                            <div class="graphic-agency-full">
+                                <div class="graphic-agency-current-purcent"></div>
+                            </div>
+                        </div>
+                        <div class="graph-section2">
+                            <div class="graphic-agency-title"></div>
+                            <div class="graphic-agency-full">
+                                <div class="graphic-agency-current-purcent"></div>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                </article>
-            </section>
-        </div>
+            </article>
+        </section>
     </div>
+</div>
+>>>>>>> b054e3875385250243d3a81e9f85493cd8d8fa6c
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
-    <script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
-    <!-- <script type="text/javascript" src="../../src/js/animation.js"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
+<script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
 
-
-    <!-- <script type="text/javascript">
-    var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
-    var countries  = JSON.parse('<?php echo json_encode($location) ;?>');
-    var launches  = JSON.parse('<?php echo json_encode($launch) ;?>');
-    var missions  = JSON.parse('<?php echo json_encode($mission) ;?>');
-    var pads  = JSON.parse('<?php echo json_encode($pad) ;?>');
-    var rockets  = JSON.parse('<?php echo json_encode($rocket) ;?>');
-    var status  = JSON.parse('<?php echo json_encode($status) ;?>');
+<script type="text/javascript">
+var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
+var countries  = JSON.parse('<?php echo json_encode($location) ;?>');
+var launches  = JSON.parse('<?php echo json_encode($launch) ;?>');
+var missions  = JSON.parse('<?php echo json_encode($mission) ;?>');
+var pads  = JSON.parse('<?php echo json_encode($pad) ;?>');
+var rockets  = JSON.parse('<?php echo json_encode($rocket) ;?>');
+var status  = JSON.parse('<?php echo json_encode($status) ;?>');
 </script>
 
-<script type="text/javascript" src="../../src/js/main.js"></script> -->
+<script type="text/javascript" src="../../src/js/main.js"></script>
+
 
 </body>
 </html>
