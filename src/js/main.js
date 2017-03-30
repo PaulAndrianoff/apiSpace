@@ -72,13 +72,6 @@ function show_current_agency(id)
 
 			graph_one[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + launches_local + ")";
 			graph_one[0].querySelector(".graphic-agency-title").innerHTML = launches_local + "% of local_launches";
-
-			//Graph of launches  
-			var launches_there = all_agency[id].launches.length / launches_total;
-			launches_there = launches_there.toFixed(2);
-
-			graph_one[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + launches_there + ")";
-			graph_one[2].querySelector(".graphic-agency-title").innerHTML = launches_there + "% of all launches";
 			
 			//Graph of pads  
 			var pads_local = all_agency[id].pads.length / pads_total;
