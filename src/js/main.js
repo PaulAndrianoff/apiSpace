@@ -20,27 +20,41 @@ var agency_stats = function(agency, locations, launches, launches_pad, missions,
 	}
 }
 
+
+function present_in_array(value, array) 
+{
+	for (var i=0; i<array.length; i++) 
+	{
+		if (array[i].match(value))
+		{ 
+			return true;
+		}
+	}
+
+	return false;
+}
+
 function show_current_agency(id)
 {
 	console.log(id);
 	var text = "";
 	if(current_section == 1)
 	{
-		if(all_agency_id.indexOf(id) != -1)
+		if(present_in_array(id, all_agency_id))
 		{
 			text += "<h3>" + all_agency[id].name + "</h3>";
 			//Number of missions for current agency
 			text += "<div><input type='checkbox' name='missions' value='" + all_agency[id].misisons.length + "' id='missions' class='miss' data-key='" + id + "'>";
 			text += "<label for='mission'> Number of missions : " + all_agency[id].misisons.length + "</div>";
-			
+
 			//Number of pads for current agency
 			text += "<div><input type='checkbox' name='pad' value='" + all_agency[id].pads.length + "' id='pad' class='pad' data-key='" + id + "'>";
 			text += "<label for='pad'> Number of pads : " + all_agency[id].pads.length + "</div>";
-			
+
 			//Number of launches for current agency
 			text += "<div><input type='checkbox' name='launches' value='" + all_agency[id].launches.length + "' id='launches' class='launch' data-key='" + id + "'>";
 			text += "<label for='mission'> Number of launches : " + all_agency[id].launches.length + "</div>";
-			
+
 			section_one.querySelector(".description-agency").innerHTML = text;
 		} 
 		else
@@ -63,12 +77,12 @@ for(var i = 0; i < agency.length; i++)
 
 	var current_name = agency[i].agency_id;
 	all_agency[current_name] = new agency_stats(agency_current, agency_current_pads_location, agency_current_launches, agency_current_pads_launches, agency_current_missions, agency_current_launches_rockets, agency_current_pads);
-//		all_agency[current_name].show_console();
-
+	//	all_agency[current_name].show_console();
+	//console.log(all_agency[135]);
 	all_agency_id[i] = agency[i].agency_id;
 }
-console.log(all_agency[all_agency_id[30]]);
-//console.log(all_agency_id);
+//console.log(all_agency[all_agency_id[30]]);
+console.log(all_agency_id);
 //console.log(all_agency_id.length);
 
 //Retrieves all missions that have the same id_agency has the current agency
