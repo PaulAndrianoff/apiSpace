@@ -1,4 +1,5 @@
 var all_agency = [];
+var all_agency_id = [];
 //console.log(agency[0]);
 //console.log(countries[0]);
 //console.log(launches[0]);
@@ -33,11 +34,16 @@ for(var i = 0; i < agency.length; i++)
 	var agency_current_launches = getlaunches(agency_current.agency_id, launches); //launches per agency
 	var agency_current_launches_rockets = getrockets(agency_current_launches, rockets, []);
 	agency_current_launches_rockets = getrockets(agency_current_pads_launches, rockets, agency_current_launches_rockets);
-
-	all_agency[agency[i].agency_id] = new agency_stats(agency_current, agency_current_pads_location, agency_current_launches, agency_current_pads_launches, agency_current_missions, agency_current_launches_rockets, agency_current_pads);
+	
+var current_name = agency[i].agency_id;
+	all_agency[current_name] = new agency_stats(agency_current, agency_current_pads_location, agency_current_launches, agency_current_pads_launches, agency_current_missions, agency_current_launches_rockets, agency_current_pads);
 //	all_agency["id_"+agency[i]].show_console();
+	
+	all_agency_id[i] = agency[i].agency_id;
 }
-console.log(all_agency);
+console.log(all_agency[all_agency_id[30]]);
+console.log(all_agency_id);
+console.log(all_agency_id.length);
 
 //Retrieves all missions that have the same id_agency has the current agency
 function getmissions(agency_id, mission_array)
