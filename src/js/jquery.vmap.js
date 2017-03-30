@@ -16,17 +16,17 @@ jQuery(document).ready(function () {
 /***********************************************************************/
 /*DEBUT FCT AFFICHER SIDEBAR*/
 /***********************************************************************/
-function openNav() {
-    document.querySelector(".section-right").style.transform = "translateX(0)";
-    document.querySelector(".section-right").style.width = "600px";
-	console.log("open");
-}
-
-function closeNav() {
-    console.log('close');
-        document.querySelector(".section-right").style.transform = "translateX(100px)";
-    document.querySelector(".section-right").style.width = "0";
-}
+// function openNav() {
+//     document.querySelector(".section-right").style.transform = "translateX(0)";
+//     document.querySelector(".section-right").style.width = "600px";
+// 	console.log("open");
+// }
+//
+// function closeNav() {
+//     console.log('close');
+//         document.querySelector(".section-right").style.transform = "translateX(100px)";
+//     document.querySelector(".section-right").style.width = "0";
+// }
 /***********************************************************************/
 /*FIN FCT AFFICHER SIDEBAR*/
 /***********************************************************************/

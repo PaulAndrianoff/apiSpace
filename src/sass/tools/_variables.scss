@@ -1,15 +1,93 @@
-// SHRINK THE MAP SECTION
-.expand
-{
-    width: 0px;
-    height: 500px;
-    margin-left: 100px;
-    padding: 5px;
-    display: inline-block;
-    border: 1px solid blue;
-    align-items: center;
+// .wrapper {
+//     width: 960px;
+//     border: 1px solid red;
+//     margin: auto;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: stretch;
+//     justify-content: center;
+// }
+//
+// div {
+//
+//     border: 1px solid black
+// }
+
+
+.rouge {
+    width: 100px;
+    height: 100px;
+    transform: translateX(100%);
+    will-change : transform;
+    transform-origin: center;
+}
+.bleu {
+    /*display: none;*/
+    width: 150px;
+    height: 150px;
+    transform: scaleX(0);
+    transform-origin: right;
+    will-change : transform;
+
 }
 
-@keyframes expand {
-    100%{transform: scale(100px);}
+
+
+/* CI dessous les class pour animation*/
+
+
+.apparition-map{
+
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+    background: #0B182B;
+    border-radius: 10px;
+    padding: 2px;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transform: translateX(0%)!important;
+}
+.delete-map{
+    // position: absolute;
+    // width: 840px;
+    // height: 100%;
+    // border: 1px solid red;
+    // background: #0B182B;
+    // border-radius: 10px;
+    // padding: 2px;
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transform: translateX(50%) !important;
+}
+
+.apparition-right{
+    // position: absolute;
+    // display: inline-block;
+    // width: 600px;
+    // height: 100%;
+    // border: 1px solid yellow;
+    // padding: 5px;
+    transform-origin: right;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transform: scaleX(1) !important;
+}
+.delete-right{
+    // position:absolute;
+    // display: inline-block;
+    // width: 600px;
+    // height: 100%;
+    // border: 1px solid yellow;
+    // padding: 5px;
+    transform-origin: right;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transform: scaleX(0);
 }
