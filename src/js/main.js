@@ -1,4 +1,4 @@
-var abbrev = agency[0].agency_abbrev;
+var all_agency = [];
 //console.log(agency[0]);
 //console.log(countries[0]);
 //console.log(launches[0]);
@@ -7,28 +7,37 @@ var abbrev = agency[0].agency_abbrev;
 //console.log(rockets[0]);
 //console.log(status);
 
-var agency_stats = function(agency, location, launch, mission, rocket, pad){
+var agency_stats = function(agency, locations, launches, launches_pad, missions, rockets, pads){
+	this.id = agency.agency_id;
 	this.name = agency.agency_name;
 	this.abbrev = agency.agency_abbrev;
-	this.pads = pad;
-	this.pads_location = location;
-	this.pads_launches = launch; //launches per agenie's pads
-	this.launches = launch; //launches per agency
-	this.misisons = mission;
-	this.rockets = rocket;
+	this.pads = pads;
+	this.pads_location = locations; //pads locations
+	this.pads_launches = launches_pad; //launches per agenie's pads
+	this.launches = launches; //launches per agency
+	this.misisons = missions;
+	this.rockets = rockets;
 
 	this.show_console = function(){
 		console.log(this);
 	}
 }
 
-var agency_current = agency[28];
-var agency_current_missions = getmissions(agency_current.agency_id, missions);
-var agency_current_pads = getpads(agency_current.agency_id, pads);
-var agency_current_pads_location = getlocations(agency_current_pads, countries);
-var agency_current_pads_launches = getpadslaunches(agency_current_pads, launches); //launches per agenie's pads
-var agency_current_pads_launches = getlaunches(agency_current.agency_id, launches); //launches per agency
-//console.log(agency_current);
+for(var i = 0; i < agency.length; i++)
+{
+	var agency_current = agency[i];
+	var agency_current_missions = getmissions(agency_current.agency_id, missions);
+	var agency_current_pads = getpads(agency_current.agency_id, pads);
+	var agency_current_pads_location = getlocations(agency_current_pads, countries);
+	var agency_current_pads_launches = getpadslaunches(agency_current_pads, launches); //launches per agenie's pads
+	var agency_current_launches = getlaunches(agency_current.agency_id, launches); //launches per agency
+	var agency_current_launches_rockets = getrockets(agency_current_launches, rockets, []);
+	agency_current_launches_rockets = getrockets(agency_current_pads_launches, rockets, agency_current_launches_rockets);
+
+	all_agency[agency[i].agency_id] = new agency_stats(agency_current, agency_current_pads_location, agency_current_launches, agency_current_pads_launches, agency_current_missions, agency_current_launches_rockets, agency_current_pads);
+//	all_agency["id_"+agency[i]].show_console();
+}
+console.log(all_agency);
 
 //Retrieves all missions that have the same id_agency has the current agency
 function getmissions(agency_id, mission_array)
@@ -93,11 +102,24 @@ function getpadslaunches(pad, launches_array)
 function getlaunches(agency_id, launches_array)
 {
 	var current_launches = [];
-	
+
 	for(var i = 0; i < launches_array.length; i++)
 	{
 		if(launches_array[i].launche_id_agency == agency_id) current_launches.push(launches_array[i]);
 	}
 
 	return current_launches;
+}
+
+function getrockets(launches, rocket_array, current_launches_rockets)
+{
+	for(var i = 0; i < launches.length; i++)
+	{
+		for(var j = 0; j < rocket_array.length; j++)
+		{
+			if(rocket_array[j].rocket_id == launches[i].launche_id_rocket) current_launches_rockets.push(rocket_array[i]);
+		}
+	}
+	//	return current_launches_rockets;
+	return current_launches_rockets;
 }
