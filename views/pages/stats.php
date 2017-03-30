@@ -30,32 +30,13 @@
             <section class="section-right">
                 <article class="agency agency-one">
                     <div class="description-agency">
-                        <h3 class="title_agence">Nasa</h3>
-                        <div class="agency-name"><p>Name :</p></div>
-                        <div class="creation-date"><p>Date of creation :</p></div>
-                        <div class="creation-date"><p>Annual budget :</p></div>
-                        <div class="missions-number"><p>Mission number :</p></div>
-                        <div class="pad-name"><p>Pad number :</p></div>
-                        <div class="pad-name"><p>Geographic coordinate :</p></div>
-                        <div class="pad-name"><p>Gravity :</p></div>
-                        <div class="number-rocket-sent">Number of launched :</div>
                     </div>
                     <div class="graphic-agency">
                         <h4 class="title_agence">Title-graphic</h4>
                     </div>
                 </article>
                 <article class="agency agency-two">
-                    <div class="description-agency">
-                        <h3 class="title_agence">Nasa 2</h3>
-                        <div class="agency-name"><p>Name :</p></div>
-                        <div class="creation-date"><p>Date of creation :</p></div>
-                        <div class="creation-date"><p>Annual budget :</p></div>
-                        <div class="missions-number"><p>Mission number :</p></div>
-                        <div class="pad-name"><p>Pad number :</p></div>
-                        <div class="pad-name"><p>Geographic coordinate :</p></div>
-                        <div class="pad-name"><p>Gravity :</p></div>
-                        <div class="number-rocket-sent">Number of launched :</div>
-                    </div>
+                    <div class="description-agency"></div>
                     <div class="graphic-agency">
                         <h4 class="title_agence">Title-graphic</h4>
                     </div>

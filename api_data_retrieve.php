@@ -230,7 +230,7 @@ else
 }
 
 //retrieves all agencies from data-base
-$query = $pdo->prepare("SELECT agency.id as agency_id, agency.name as agency_name, agency.abbrev as agency_abbrev FROM agency");
+$query = $pdo->prepare("SELECT agency.id as agency_id, agency.name as agency_name, agency.abbrev as agency_abbrev, agency.creation_year as agency_creation_year, agency.budget as agency_budget, agency.collaboration as agency_collaboration FROM agency");
 $query->execute();
 $agency = $query->fetchAll();
 

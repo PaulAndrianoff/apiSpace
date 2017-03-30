@@ -7,6 +7,9 @@ var section_two = document.querySelector(".agency.agency-two");
 var agency_stats = function(agency, locations, launches, launches_pad, missions, rockets, pads){
 	this.id = agency.agency_id;
 	this.name = agency.agency_name;
+	this.creation = agency.agency_creation_year;
+	this.budget = agency.agency_budget;
+	this.collaboration = agency.agency_collaboration;
 	this.abbrev = agency.agency_abbrev;
 	this.pads = pads;
 	this.pads_location = locations; //pads locations
@@ -36,55 +39,44 @@ function present_in_array(value, array)
 
 function show_current_agency(id)
 {
-	console.log(id);
 	var text = "";
 	if(current_section == 1)
 	{
 		if(present_in_array(id, all_agency_id))
 		{
-			text += "<h3>" + all_agency[id].name + "</h3>";
-			//Number of missions for current agency
-			text += "<div><input type='checkbox' name='missions' value='" + all_agency[id].misisons.length + "' id='missions' class='miss' data-key='" + id + "'>";
-			text += "<label for='mission'> Number of missions : " + all_agency[id].misisons.length + "</div>";
-
-			//Number of pads for current agency
-			text += "<div><input type='checkbox' name='pad' value='" + all_agency[id].pads.length + "' id='pad' class='pad' data-key='" + id + "'>";
-			text += "<label for='pad'> Number of pads : " + all_agency[id].pads.length + "</div>";
-
-			//Number of launches for current agency
-			text += "<div><input type='checkbox' name='launches' value='" + all_agency[id].launches.length + "' id='launches' class='launch' data-key='" + id + "'>";
-			text += "<label for='mission'> Number of launches : " + all_agency[id].launches.length + "</div>";
-
+			text = "<h3 class='title_agence'>" + all_agency[id].abbrev + "</h3>" +
+				"<div class='agency-name'><p>Name : " + all_agency[id].name + "</p></div>" + 
+				"<div class='creation-date'><p>Date of creation : " + all_agency[id].creation + "</p></div>" +
+				"<div class='creation-date'><p>Annual budget : " + all_agency[id].budget + "</p></div>" +
+				"<div class='missions-number'><p>Mission number : " + all_agency[id].misisons.length + "</p></div>" +
+				"<div class='pad-name'><p>Pad number : " + all_agency[id].pads.length + "</p></div>" +
+				"<div class='number-rocket-sent'>Number of launched : " + all_agency[id].launches.length + "</div>";
 			section_one.querySelector(".description-agency").innerHTML = text;
 		} 
 		else
 		{
-			section_one.querySelector(".description-agency").innerHTML = "We don't have information.";
+			text += "<h3 class='title_agence'>We don't have information</h3>";
+			section_one.querySelector(".description-agency").innerHTML = text;
 		}
-		 current_section = 2;
+		current_section = 2;
 	}
 	else
 	{
 		if(present_in_array(id, all_agency_id))
 		{
-			text += "<h3>" + all_agency[id].name + "</h3>";
-			//Number of missions for current agency
-			text += "<div><input type='checkbox' name='missions' value='" + all_agency[id].misisons.length + "' id='missions' class='miss' data-key='" + id + "'>";
-			text += "<label for='mission'> Number of missions : " + all_agency[id].misisons.length + "</div>";
-
-			//Number of pads for current agency
-			text += "<div><input type='checkbox' name='pad' value='" + all_agency[id].pads.length + "' id='pad' class='pad' data-key='" + id + "'>";
-			text += "<label for='pad'> Number of pads : " + all_agency[id].pads.length + "</div>";
-
-			//Number of launches for current agency
-			text += "<div><input type='checkbox' name='launches' value='" + all_agency[id].launches.length + "' id='launches' class='launch' data-key='" + id + "'>";
-			text += "<label for='mission'> Number of launches : " + all_agency[id].launches.length + "</div>";
-
+			text = "<h3 class='title_agence'>" + all_agency[id].abbrev + "</h3>" +
+				"<div class='agency-name'><p>Name : " + all_agency[id].name + "</p></div>" + 
+				"<div class='creation-date'><p>Date of creation : " + all_agency[id].creation + "</p></div>" +
+				"<div class='creation-date'><p>Annual budget : " + all_agency[id].budget + "</p></div>" +
+				"<div class='missions-number'><p>Mission number : " + all_agency[id].misisons.length + "</p></div>" +
+				"<div class='pad-name'><p>Pad number : " + all_agency[id].pads.length + "</p></div>" +
+				"<div class='number-rocket-sent'>Number of launched : " + all_agency[id].launches.length + "</div>";
 			section_two.querySelector(".description-agency").innerHTML = text;
 		} 
 		else
 		{
-			section_two.querySelector(".description-agency").innerHTML = "We don't have information.";
+			text += "<h3 class='title_agence'>We don't have information</h3>";
+			section_two.querySelector(".description-agency").innerHTML = text;
 		}
 		current_section = 1;
 	}
@@ -103,13 +95,9 @@ for(var i = 0; i < agency.length; i++)
 
 	var current_name = agency[i].agency_id;
 	all_agency[current_name] = new agency_stats(agency_current, agency_current_pads_location, agency_current_launches, agency_current_pads_launches, agency_current_missions, agency_current_launches_rockets, agency_current_pads);
-	//	all_agency[current_name].show_console();
-	//console.log(all_agency[135]);
+
 	all_agency_id[i] = agency[i].agency_id;
 }
-//console.log(all_agency[all_agency_id[30]]);
-console.log(all_agency_id);
-//console.log(all_agency_id.length);
 
 //Retrieves all missions that have the same id_agency has the current agency
 function getmissions(agency_id, mission_array)
