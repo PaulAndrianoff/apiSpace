@@ -1,8 +1,15 @@
 var all_agency = [];
 var all_agency_id = [];
 var current_section = 1;
+
+var launches_total = launches.length;
+var pads_total = pads.length;
+//console.log(pads_total);
+
 var section_one = document.querySelector(".agency.agency-one");
 var section_two = document.querySelector(".agency.agency-two");
+var graph_one = document.querySelectorAll(".agency.agency-one .graph-section1");
+var graph_two = document.querySelectorAll(".agency.agency-two .graph-section2");
 
 var agency_stats = function(agency, locations, launches, launches_pad, missions, rockets, pads){
 	this.id = agency.agency_id;
@@ -40,6 +47,7 @@ function present_in_array(value, array)
 function show_current_agency(id)
 {
 	var text = "";
+	console.log(id);
 	if(current_section == 1)
 	{
 		if(present_in_array(id, all_agency_id))
@@ -51,12 +59,38 @@ function show_current_agency(id)
 				"<div class='missions-number'><p>Mission number : " + all_agency[id].misisons.length + "</p></div>" +
 				"<div class='pad-name'><p>Pad number : " + all_agency[id].pads.length + "</p></div>" +
 				"<div class='number-rocket-sent'>Number of launched : " + all_agency[id].launches.length + "</div>";
+
 			section_one.querySelector(".description-agency").innerHTML = text;
+
+			//Graph of local launches 
+			var launches_local = 0;
+			if(all_agency[id].launches.length > 0)
+			{
+				var launches_local = all_agency[id].launches.length / (all_agency[id].launches.length + all_agency[id].pads_launches.length);
+			}
+			launches_local = launches_local.toFixed(2);
+
+			graph_one[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + launches_local + ")";
+			graph_one[0].querySelector(".graphic-agency-title").innerHTML = launches_local + "% of local_launches";
+
+			//Graph of pads  
+			var pads_local = all_agency[id].pads.length / pads_total;
+			pads_local = pads_local.toFixed(2);
+
+			graph_one[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + pads_local + ")";
+			graph_one[1].querySelector(".graphic-agency-title").innerHTML = pads_local + "% of all pads";
 		} 
 		else
 		{
 			text += "<h3 class='title_agence'>We don't have information</h3>";
 			section_one.querySelector(".description-agency").innerHTML = text;
+
+
+			graph_one[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_one[0].querySelector(".graphic-agency-title").innerHTML = "0.00% of local_launches";
+
+			graph_one[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_one[1].querySelector(".graphic-agency-title").innerHTML = "0.00% of all pads";
 		}
 		current_section = 2;
 	}
@@ -72,11 +106,34 @@ function show_current_agency(id)
 				"<div class='pad-name'><p>Pad number : " + all_agency[id].pads.length + "</p></div>" +
 				"<div class='number-rocket-sent'>Number of launched : " + all_agency[id].launches.length + "</div>";
 			section_two.querySelector(".description-agency").innerHTML = text;
+
+			var launches_local = 0;
+			if(all_agency[id].launches.length > 0)
+			{
+				var launches_local = all_agency[id].launches.length / (all_agency[id].launches.length + all_agency[id].pads_launches.length);
+			}
+			launches_local = launches_local.toFixed(2);
+
+			graph_two[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + launches_local + ")";
+			graph_two[0].querySelector(".graphic-agency-title").innerHTML = launches_local + "% of local_launches";
+
+			//Graph of local launches 
+			var pads_local = all_agency[id].pads.length / pads_total;
+			pads_local = pads_local.toFixed(2);
+
+			graph_two[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + pads_local + ")";
+			graph_two[1].querySelector(".graphic-agency-title").innerHTML = pads_local + "% of local_launches";
 		} 
 		else
 		{
 			text += "<h3 class='title_agence'>We don't have information</h3>";
 			section_two.querySelector(".description-agency").innerHTML = text;
+
+			graph_two[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_two[0].querySelector(".graphic-agency-title").innerHTML = "0.00% of local_launches";
+
+			graph_two[1].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
+			graph_two[1].querySelector(".graphic-agency-title").innerHTML = "0.00% of local_launches";
 		}
 		current_section = 1;
 	}
@@ -97,6 +154,8 @@ for(var i = 0; i < agency.length; i++)
 	all_agency[current_name] = new agency_stats(agency_current, agency_current_pads_location, agency_current_launches, agency_current_pads_launches, agency_current_missions, agency_current_launches_rockets, agency_current_pads);
 
 	all_agency_id[i] = agency[i].agency_id;
+
+	all_agency[current_name].show_console();
 }
 
 //Retrieves all missions that have the same id_agency has the current agency
