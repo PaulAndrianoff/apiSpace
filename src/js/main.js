@@ -61,6 +61,32 @@ function show_current_agency(id)
 		{
 			section_one.querySelector(".description-agency").innerHTML = "We don't have information.";
 		}
+		 current_section = 2;
+	}
+	else
+	{
+		if(present_in_array(id, all_agency_id))
+		{
+			text += "<h3>" + all_agency[id].name + "</h3>";
+			//Number of missions for current agency
+			text += "<div><input type='checkbox' name='missions' value='" + all_agency[id].misisons.length + "' id='missions' class='miss' data-key='" + id + "'>";
+			text += "<label for='mission'> Number of missions : " + all_agency[id].misisons.length + "</div>";
+
+			//Number of pads for current agency
+			text += "<div><input type='checkbox' name='pad' value='" + all_agency[id].pads.length + "' id='pad' class='pad' data-key='" + id + "'>";
+			text += "<label for='pad'> Number of pads : " + all_agency[id].pads.length + "</div>";
+
+			//Number of launches for current agency
+			text += "<div><input type='checkbox' name='launches' value='" + all_agency[id].launches.length + "' id='launches' class='launch' data-key='" + id + "'>";
+			text += "<label for='mission'> Number of launches : " + all_agency[id].launches.length + "</div>";
+
+			section_two.querySelector(".description-agency").innerHTML = text;
+		} 
+		else
+		{
+			section_two.querySelector(".description-agency").innerHTML = "We don't have information.";
+		}
+		current_section = 1;
 	}
 }
 
