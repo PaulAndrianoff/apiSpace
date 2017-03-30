@@ -3,6 +3,7 @@
 include_once "../../includes/config.php";
 include_once "../../api_data_retrieve.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
