@@ -22,8 +22,7 @@ include_once "../../api_data_retrieve.php";
 				<p class="paragraph-stats-presentation">
 					CHECK OUT THE CRITERIA OF YOUR CHOICE BY NAVIGATING ON THE WORLD MAP
 				</p>
-			</header>
-
+			</header>        
 			<div class="main">
 				<section class="section-map">
 					<div id="vmap" class="map"></div>
@@ -75,7 +74,6 @@ include_once "../../api_data_retrieve.php";
 							</div>
 						</div>
 						</div>
-
 					</article>
 				</section>
 		</div>
@@ -96,7 +94,8 @@ include_once "../../api_data_retrieve.php";
 		var status  = JSON.parse('<?php echo json_encode($status) ;?>');
 	</script>
 
-	<script type="text/javascript" src="../../src/js/main.js"></script> 
+	<script type="text/javascript" src="../../src/js/main.js"></script>
+
 
 	</body>
 </html>
