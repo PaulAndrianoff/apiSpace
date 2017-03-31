@@ -69,7 +69,7 @@ function show_current_agency(id)
 				text = "<h3 class='title_agence'>" + all_agency[id].abbrev + "</h3>" +
 					"<div class='agency-name'><p>Name : " + all_agency[id].name + "</p></div>" + 
 					"<div class='creation-date'><p>Date of creation : " + all_agency[id].creation + "</p></div>" +
-					"<div class='creation-date'><p>Annual budget : " + (all_agency[id].budget == 0 ? "UNKNOW" : all_agency[id].budget) + "</p></div>" +
+					"<div class='creation-date'><p>Annual budget : " + (all_agency[id].budget == 0 ? "UNKNOW" : all_agency[id].budget + " millions $") + "</p></div>" +
 					"<div class='missions-number'><p>Mission number : " + all_agency[id].misisons.length + "</p></div>" +
 					"<div class='pad-name'><p>Pad number : " + all_agency[id].pads.length + "</p></div>" +
 					"<div class='number-rocket-sent'>Number of launched : " + all_agency[id].launches.length + "</div>";
@@ -136,7 +136,7 @@ function show_current_agency(id)
 				text = "<h3 class='title_agence'>" + all_agency[id].abbrev + "</h3>" +
 					"<div class='agency-name'><p>Name : " + all_agency[id].name + "</p></div>" + 
 					"<div class='creation-date'><p>Date of creation : " + all_agency[id].creation + "</p></div>" +
-					"<div class='creation-date'><p>Annual budget : " + (all_agency[id].budget == 0 ? "UNKNOW" : all_agency[id].budget) + "</p></div>" +
+					"<div class='creation-date'><p>Annual budget : " + (all_agency[id].budget == 0 ? "UNKNOW" : all_agency[id].budget + " millions $") + "</p></div>" +
 					"<div class='missions-number'><p>Mission number : " + all_agency[id].misisons.length + "</p></div>" +
 					"<div class='pad-name'><p>Pad number : " + all_agency[id].pads.length + "</p></div>" +
 					"<div class='number-rocket-sent'>Number of launched : " + all_agency[id].launches.length + "</div>";
