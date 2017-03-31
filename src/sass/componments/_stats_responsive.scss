@@ -1,16 +1,15 @@
-@media only screen and (min-width: 0px) and (max-width: 767px)
-{
+@media only screen and (min-width: 0px) and (max-width: 527px){
     html {
         background-color: #0B182B;
-        
-        body
+
+        .body-stats
         {
             position: relative;
 
 
             max-width: 1440px;
-            height: 700px;
-            overflow: visible;
+            height: 1200px;
+            overflow: scroll;
             // CONTAINER
 
             .container-stats
@@ -153,10 +152,10 @@
                     {
                         position: absolute;
                         display: inline-block;
-                        top: 50%;
+                        top: 35%;
                         left: 0;
                         width: 100%;
-                        height: 50%;
+                        height: 85%;
                         transform: scaleY(0);
                         will-change: transform;
                         transform-origin: top;
@@ -167,7 +166,7 @@
                         {
                             position: relative;
                             width: 100%;
-                            height: 50%;
+                            height: 35%;
                             display: flex;
                             color: white;
                             background: #1c2430;
@@ -273,7 +272,289 @@
         }
     }
 
+svg{
+    margin-top: -30px;
+}
 
+}
+@media only screen and (min-width: 528px) and (max-width: 767px)
+{
+    html {
+        background-color: #0B182B;
+
+        .body-stats
+        {
+            position: relative;
+
+
+            max-width: 1440px;
+            height: 1200px;
+            overflow: scroll;
+            // CONTAINER
+
+            .container-stats
+            {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                margin: auto;
+
+
+                // HEADER
+                header
+                {
+
+                    border-bottom: 3px solid $blue_clear;
+
+                    .title-stats
+                    {
+                        font-family: earthorbiter;
+                        line-height: 50px;
+                        text-align: center;
+                        font-size: 40px;
+                        color:$blue_clear;
+                        letter-spacing: 20px;
+                    }
+
+                    .paragraph-stats-presentation
+                    {
+                        line-height: 30px;
+                        letter-spacing:10px;
+                        text-align: center;
+                        color:#fefefe;
+                        font-family: 'lato', sans-serif;
+                        padding-bottom: 10px;
+
+                    }
+                }
+
+                //CONTENT
+                .main
+                {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items:flex-start;
+                    justify-content:flex-start;
+                    flex-wrap: wrap;
+
+                    // MAP SECTION
+                    .section-map
+                    {
+                        // display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 50%;
+                        background: #0B182B;
+                        padding: 2px;
+                        transform: translateY(0%);
+                        will-change : transform;
+                        transform-origin: center;
+
+
+                        #vmap
+                        {
+                            position: absolute;
+                            // left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 10px;
+                        }
+
+                        .jqvmap-label
+                        {
+                            position: absolute;
+                            display: none;
+                            -webkit-border-radius: 3px;
+                            -moz-border-radius: 3px;
+                            border-radius: 3px;
+                            background: #292929;
+                            color: white;
+                            font-family: sans-serif, Verdana;
+                            font-size: smaller;
+                            padding: 3px;
+                            pointer-events:none;
+                        }
+                        .jqvmap-pin
+                        {
+                            pointer-events:none;
+                        }
+                        .jqvmap-zoomin, .jqvmap-zoomout
+                        {
+                            position: absolute;
+                            left: 10px;
+                            -webkit-border-radius: 3px;
+                            -moz-border-radius: 3px;
+                            border-radius: 3px;
+                            background: $blue_clear;
+                            padding: 20px;
+                            color: white;
+                            width: 50px;
+                            height: 50px;
+                            cursor: pointer;
+                            line-height: 13px;
+                            text-align: center;
+                            margin-top: 5px;
+                        }
+                        .jqvmap-zoomin
+                        {
+                            left: 20px;
+                            top: 10px;
+                        }
+                        .jqvmap-zoomout
+                        {
+                            left: 20px;
+                            top: 80px;
+                        }
+                        .jqvmap-region
+                        {
+                            cursor: pointer;
+                        }
+
+                        .jqvmap-ajax_response
+                        {
+                            width: 100%;
+                            height: 500px;
+                        }
+
+                    }
+
+
+
+                    // SECTION DESCRIPTION AND GRAPH :
+                    .section-right
+                    {
+                        position: absolute;
+                        display: inline-block;
+                        top: 35%;
+                        left: 0;
+                        width: 100%;
+                        height: 85%;
+                        transform: scaleY(0);
+                        will-change: transform;
+                        transform-origin: top;
+
+
+
+                        .agency
+                        {
+                            position: relative;
+                            width: 100%;
+                            height: 35%;
+                            display: flex;
+                            color: white;
+                            background: #1c2430;
+                            border-left: 3px solid $blue_clear;
+                            padding: 5px;
+                            font-family: 'lato', sans-serif;
+
+
+
+                            &.agency-one
+                            {
+                                border-bottom: 1px solid  $blue_border;
+                            }
+
+                            .title_agence
+                            {
+                                font-size: 2rem;
+                                margin-bottom: 15px;
+
+                            }
+
+                            .description-agency
+                            {
+                                text-align: center;
+                                display: inline-block;
+                                width: 35%;
+                                height: 100%;
+                                border-right: 1px solid $blue_border;
+
+                                div
+                                {
+
+                                    text-align: left;
+                                    font-size: 13px;
+                                    margin-bottom: 15px;
+
+                                }
+                            }
+                            .graphic-agency
+                            {
+                                display: inline-block;
+                                width: 65%;
+                                height: 100%;
+                                margin-left: 10px;
+
+                                h4
+                                {
+                                    text-align: center;
+                                    font-size: 1.2rem;
+                                }
+
+                            }
+
+                            .wrapper-close
+                            {
+                                width: 30px;
+                                height: 100%;
+                                margin-left: 7px;
+                                display: flex;
+                                align-items: center;
+                                border: 1px solid red;
+                                a
+                                {
+                                    margin-left: 8px;
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .apparition-map{
+            transition-property: none !important;
+            transition-duration: none !important;
+            transition-timing-function: none !important;
+            transform: none !important;
+        }
+        .delete-map{
+            transform-origin:none !important;
+            transition-property: none !important;
+            transition-duration: none !important;
+            transition-timing-function: none !important;
+            transform:none !important;
+        }
+
+        .apparition-right{
+            transform-origin: top;
+            transition-property: transform;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in;
+            transform: scaleY(1) !important;
+        }
+
+        .delete-right{
+            transform-origin: top;
+            transition-property: transform;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in;
+            transform: scaleY(0);
+        }
+    }
+
+    svg{
+        margin-top: -30px;
+    }
 
 }
 
@@ -282,7 +563,7 @@
     html {
         background-color: #0B182B;
 
-        body
+    .body-stats
         {
             position: relative;
             overflow:visible;
@@ -559,7 +840,7 @@
     html {
         background-color: #0B182B;
 
-        body
+        .body-stats
         {
             position: relative;
             max-width: 1440px;

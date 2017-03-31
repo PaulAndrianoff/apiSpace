@@ -1,23 +1,12 @@
-html {
+html
+{
     background-color: #0B182B;
-
-<<<<<<< HEAD
-
-    body
+    .body-stats
     {
-
         max-width: 1440px;
         height: 1550px;
         overflow: hidden;
-=======
-    body
-    {
 
-        min-width: 960px;
-        max-width: 1440px;
-        height: 1550px;
-        // overflow: hidden;
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
         // CONTAINER
 
         .container-stats
@@ -32,10 +21,6 @@ html {
             header
             {
 
-<<<<<<< HEAD
-=======
-                height: 100px;
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
                 border-bottom: 3px solid $blue_clear;
 
                 .title-stats
@@ -55,10 +40,8 @@ html {
                     text-align: center;
                     color:#fefefe;
                     font-family: 'lato', sans-serif;
-<<<<<<< HEAD
                     padding-bottom: 10px;
-=======
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
+
 
                 }
             }
@@ -116,36 +99,22 @@ html {
                         pointer-events:none;
                     }
                     .jqvmap-pin
-<<<<<<< HEAD
                     {
                         pointer-events:none;
                     }
                     .jqvmap-zoomin, .jqvmap-zoomout
                     {
-=======
-                    {
-                        pointer-events:none;
-                    }
-                    .jqvmap-zoomin, .jqvmap-zoomout
-                    {
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
+
                         position: absolute;
                         left: 10px;
                         -webkit-border-radius: 3px;
                         -moz-border-radius: 3px;
                         border-radius: 3px;
                         background: $blue_clear;
-<<<<<<< HEAD
                         padding: 7px;
                         color: white;
                         width: 30px;
                         height: 30px;
-=======
-                        padding: 3px;
-                        color: white;
-                        width: 20px;
-                        height: 20px;
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
                         cursor: pointer;
                         line-height: 13px;
                         text-align: center;
@@ -157,11 +126,8 @@ html {
                     }
                     .jqvmap-zoomout
                     {
-<<<<<<< HEAD
                         top: 50px;
-=======
-                        top: 30px;
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
+
                     }
                     .jqvmap-region
                     {
@@ -200,7 +166,7 @@ html {
                         background: #1c2430;
                         border-left: 3px solid $blue_clear;
                         padding: 5px;
-                            font-family: 'lato', sans-serif;
+                        font-family: 'lato', sans-serif;
 
 
 
@@ -283,25 +249,19 @@ html {
         transform: translateX(50%) !important;
     }
 
-<<<<<<< HEAD
     .apparition-right{
         transform-origin: right;
         transition-property: transform;
         transition-duration: 0.2s;
         transition-timing-function: ease-in;
         transform: scaleX(1) !important;
-=======
-    // RESPONSIVE
-    @media query {
 
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
-    }
-
-    .delete-right{
-        transform-origin: right;
-        transition-property: transform;
-        transition-duration: 0.2s;
-        transition-timing-function: ease-in;
-        transform: scaleX(0);
+        .delete-right{
+            transform-origin: right;
+            transition-property: transform;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in;
+            transform: scaleX(0);
+        }
     }
 }

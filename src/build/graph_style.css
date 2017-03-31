@@ -6,17 +6,15 @@
 .graphic-agency-title
 {
 	display: inline-block;
+	padding: 5px;
 }
 
 .graphic-agency-full
 {
 	width: 200px;
 	height: 20px;
-<<<<<<< HEAD
-	background: #504e4e;
-=======
-	background: #f6e4c4;
->>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
+
+	background: #fefefe;
 }
 
 .graphic-agency-current-purcent

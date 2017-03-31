@@ -1,115 +1,117 @@
-.title
-{
-    position: absolute;
-    font-weight: 300;
-    top: 26%;
-    left: 0;
-    right: 0;
-    margin-top: -80px;
-    font-family: earthorbiter, 'lato', 'Arial', sans-serif;
-    font-size: 130px;
-    text-align: center;
-    letter-spacing: 20px;
-    padding-left: 20px;
-    background: -webkit-linear-gradient(white, #dbdde0, #38495a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-    animation-name: animGravity;
-
-
-}
-
-.home-subtitle
-{
-    position: absolute;
-    font-weight: 300;
-    top: 50%;
-    left: 0;
-    right: 0;
-    font-size: 30px;
-    text-align: center;
-    letter-spacing: 6px;
-    font-family: 'lato', sans-serif;
-
-
-    .home-subtitle_welcome
+.body-home{
+    .title
     {
-        margin-bottom: 45px;
+        position: absolute;
+        font-weight: 300;
+        top: 26%;
+        left: 0;
+        right: 0;
+        margin-top: -80px;
+        font-family: earthorbiter, 'lato', 'Arial', sans-serif;
+        font-size: 130px;
+        text-align: center;
+        letter-spacing: 20px;
+        padding-left: 20px;
+        background: -webkit-linear-gradient(white, #dbdde0, #38495a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-name: animGravity;
+
+
     }
-    .home-subtitle_explication
+
+    .home-subtitle
     {
-        margin-bottom: 60px;
+        position: absolute;
+        font-weight: 300;
+        top: 50%;
+        left: 0;
+        right: 0;
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 6px;
+        font-family: 'lato', sans-serif;
+
+
+        .home-subtitle_welcome
+        {
+            margin-bottom: 45px;
+        }
+        .home-subtitle_explication
+        {
+            margin-bottom: 60px;
+        }
+
+        .lets-go
+        {
+            text-decoration: none;
+            padding: 30px;
+
+            span
+            {
+                color: #B0DAFF;
+                font-size: 2.5rem;
+                font-weight: 500;
+                animation-duration: 6s;
+                animation-timing-function: ease;
+                animation-fill-mode: forwards;
+                text-decoration: line-through;
+
+            }
+
+            span:nth-child(1)
+            {
+                animation-name: animDont;
+            }
+
+            span:nth-child(2)
+            {
+                animation-name: animLet;
+            }
+
+            span:nth-child(3)
+            {
+                animation-name: animGo;
+            }
+        }
     }
 
-    .lets-go
+
+    @keyframes animDont
     {
-        text-decoration: none;
-        padding: 30px;
-
-        span
-        {
-            color: #B0DAFF;
-            font-size: 2.5rem;
-            font-weight: 500;
-            animation-duration: 6s;
-            animation-timing-function: ease;
-            animation-fill-mode: forwards;
-            text-decoration: line-through;
-
+        0%, 15%{
+            transform: translateY(-26px);
+            opacity: 0;
+        }
+        35%, 100% {
+            transform: translateY(0px);
+            opacity: 1;
         }
 
-        span:nth-child(1)
-        {
-            animation-name: animDont;
+    }
+    @keyframes animLet {
+        0%, 25% {
+            transform: translateY(-26px);
+            opacity: 0;
+        }
+        45%, 100% {
+            transform: translateY(0px);
+            opacity: 1;
         }
 
-        span:nth-child(2)
-        {
-            animation-name: animLet;
+    }
+    @keyframes animGo {
+        0%, 35% {
+            transform: translateY(-26px);
+            opacity: 0;
+        }
+        55%, 100% {
+            transform: translateY(0px);
+            opacity: 1;
         }
 
-        span:nth-child(3)
-        {
-            animation-name: animGo;
-        }
     }
-}
-
-
-@keyframes animDont
-{
-    0%, 15%{
-        transform: translateY(-26px);
-        opacity: 0;
-    }
-    35%, 100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-
-}
-@keyframes animLet {
-    0%, 25% {
-        transform: translateY(-26px);
-        opacity: 0;
-    }
-    45%, 100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-
-}
-@keyframes animGo {
-    0%, 35% {
-        transform: translateY(-26px);
-        opacity: 0;
-    }
-    55%, 100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-
 }
