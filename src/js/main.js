@@ -103,7 +103,7 @@ function show_current_agency(id)
 				mission_int = mission_int.toFixed(2);
 
 				graph_one[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + mission_int + ")";
-				graph_one[2].querySelector(".graphic-agency-title").innerHTML = all_agency[id].misisons.length + " out of " + missions_total + " : all missions in the world";
+				graph_one[2].querySelector(".graphic-agency-title").innerHTML = all_agency[id].misisons.length + " out of " + missions_total + " : all missions in the world last two months";
 
 				//Graph of collaborations
 				var collaboration_int = parseInt(all_agency[id].collaboration)/ collaboration_total;
@@ -125,7 +125,7 @@ function show_current_agency(id)
 				graph_two[1].querySelector(".graphic-agency-title").innerHTML = "0 out of " + pads_total + "all pads in the world";
 
 				graph_two[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
-				graph_two[2].querySelector(".graphic-agency-title").innerHTML = "0 out of " + missions_total + "all missions in the world";
+				graph_two[2].querySelector(".graphic-agency-title").innerHTML = "0 out of " + missions_total + "all missions in the world last two months";
 
 				graph_two[3].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
 				graph_two[3].querySelector(".graphic-agency-title").innerHTML = "0 out of " + collaboration_total + "all collaborations in the world";
@@ -170,7 +170,7 @@ function show_current_agency(id)
 				mission_int = mission_int.toFixed(2);
 
 				graph_two[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + mission_int + ")";
-				graph_two[2].querySelector(".graphic-agency-title").innerHTML = all_agency[id].misisons.length + " out of " + missions_total + " : all missions in the world";
+				graph_two[2].querySelector(".graphic-agency-title").innerHTML = all_agency[id].misisons.length + " out of " + missions_total + " : all missions in the world last two months";
 
 				//Graph of collaborations
 				var collaboration_int = parseInt(all_agency[id].collaboration)/ collaboration_total;
@@ -192,7 +192,7 @@ function show_current_agency(id)
 				graph_two[1].querySelector(".graphic-agency-title").innerHTML = "0 out of " + pads_total + "all pads in the world";
 
 				graph_two[2].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
-				graph_two[2].querySelector(".graphic-agency-title").innerHTML = "0 out of " + missions_total + "all missions in the world";
+				graph_two[2].querySelector(".graphic-agency-title").innerHTML = "0 out of " + missions_total + "all missions in the world last two months";
 
 				graph_two[3].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + 0 + ")";
 				graph_two[3].querySelector(".graphic-agency-title").innerHTML = "0 out of " + collaboration_total + "all collaborations in the world";
