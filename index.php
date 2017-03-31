@@ -26,7 +26,7 @@
                 LET'S
             </span>
             <span>
-                GO
+                STATS
             </span>
         </a>
     </div>

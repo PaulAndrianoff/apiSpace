@@ -1,13 +1,13 @@
 html {
     background-color: #0B182B;
 
+
     body
     {
 
-        min-width: 960px;
         max-width: 1440px;
         height: 1550px;
-        // overflow: hidden;
+        overflow: hidden;
         // CONTAINER
 
         .container-stats
@@ -22,7 +22,6 @@ html {
             header
             {
 
-                height: 100px;
                 border-bottom: 3px solid $blue_clear;
 
                 .title-stats
@@ -42,6 +41,7 @@ html {
                     text-align: center;
                     color:#fefefe;
                     font-family: 'lato', sans-serif;
+                    padding-bottom: 10px;
 
                 }
             }
@@ -110,10 +110,10 @@ html {
                         -moz-border-radius: 3px;
                         border-radius: 3px;
                         background: $blue_clear;
-                        padding: 3px;
+                        padding: 7px;
                         color: white;
-                        width: 20px;
-                        height: 20px;
+                        width: 30px;
+                        height: 30px;
                         cursor: pointer;
                         line-height: 13px;
                         text-align: center;
@@ -125,7 +125,7 @@ html {
                     }
                     .jqvmap-zoomout
                     {
-                        top: 30px;
+                        top: 50px;
                     }
                     .jqvmap-region
                     {
@@ -233,10 +233,33 @@ html {
         }
     }
 
-
-    // RESPONSIVE
-    @media query {
-
+    .apparition-map{
+        transition-property: transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in;
+        transform: translateX(0%)!important;
+    }
+    .delete-map{
+        transform-origin: center;
+        transition-property: transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in;
+        transform: translateX(50%) !important;
     }
 
+    .apparition-right{
+        transform-origin: right;
+        transition-property: transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in;
+        transform: scaleX(1) !important;
+    }
+
+    .delete-right{
+        transform-origin: right;
+        transition-property: transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in;
+        transform: scaleX(0);
+    }
 }

@@ -1,3 +1,8 @@
+.graph-section1, .graph-section2
+{
+	margin-bottom: 20px;
+}
+
 .graphic-agency-title
 {
 	display: inline-block;
@@ -7,6 +12,7 @@
 {
 	width: 200px;
 	height: 20px;
+	background: #504e4e;
 }
 
 .graphic-agency-current-purcent
@@ -16,5 +22,5 @@
 	transform-origin: left;
 	background: #2222ff;
 	transform: scaleX(0);
-	transition: 0.3s ease;
+	transition: 0.5s ease;
 }

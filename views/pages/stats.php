@@ -1,13 +1,14 @@
 
 <?php
-include_once "../../includes/config.php";
-include_once "../../api_data_retrieve.php";
+// include_once "../../includes/config.php";
+// include_once "../../api_data_retrieve.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Space Stats</title>
+    <!-- stop navigator auto zoom : -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../../src/build/reset.min.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
@@ -21,7 +22,7 @@ include_once "../../api_data_retrieve.php";
             <p class="paragraph-stats-presentation">
                 CHECK OUT THE CRITERIA OF YOUR CHOICE BY NAVIGATING ON THE WORLD MAP
             </p>
-        </header>        
+        </header>
         <div class="main">
             <section class="section-map">
                 <div id="vmap" class="map"></div>
@@ -66,13 +67,11 @@ include_once "../../api_data_retrieve.php";
         </section>
     </div>
 </div>
->>>>>>> b054e3875385250243d3a81e9f85493cd8d8fa6c
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../../src/js/jquery.vmap.js"></script>
 <script type="text/javascript" src="../../src/js/jquery.vmap.world.js" charset="utf-8"></script>
 <script type="text/javascript" src="../../src/js/jquery.vmap.sampledata.js"></script>
-
 <script type="text/javascript">
 var agency  = JSON.parse('<?php echo json_encode($agency) ;?>');
 var countries  = JSON.parse('<?php echo json_encode($location) ;?>');

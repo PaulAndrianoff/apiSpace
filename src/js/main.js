@@ -72,7 +72,7 @@ function show_current_agency(id)
 
 			graph_one[0].querySelector(".graphic-agency-current-purcent").style = "transform: scaleX(" + launches_local + ")";
 			graph_one[0].querySelector(".graphic-agency-title").innerHTML = launches_local + "% of local_launches";
-
+			
 			//Graph of pads  
 			var pads_local = all_agency[id].pads.length / pads_total;
 			pads_local = pads_local.toFixed(2);

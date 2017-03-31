@@ -24,7 +24,7 @@ var last_cc=null;
 function stats_animation(cc) {
 	if (last_cc == cc) {
 
-		if (section_right.classList.contains('apparition-right') && section_map.classList.contains('apparition-map')) {
+		if (section_right.classList.contains('apparition-right')) {
 			section_map.classList.add('delete-map');
 			section_map.classList.remove('apparition-map');
 
