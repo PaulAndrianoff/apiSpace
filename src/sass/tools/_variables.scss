@@ -7,6 +7,7 @@ $blue_border: #979797;
 /* CI dessous les class pour animation*/
 
 
+<<<<<<< HEAD
 // .apparition-map{
 //     transition-property: transform;
 //     transition-duration: 0.2s;
@@ -36,3 +37,34 @@ $blue_border: #979797;
 //     transition-timing-function: ease-in;
 //     transform: scaleX(0);
 // }
+=======
+.apparition-map{
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transform: translateX(0%)!important;
+}
+.delete-map{
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transform: translateX(50%) !important;
+}
+
+.apparition-right{
+    transform-origin: right;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transform: scaleX(1) !important;
+}
+
+.delete-right{
+    transform-origin: right;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transform: scaleX(0);
+}
+>>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e

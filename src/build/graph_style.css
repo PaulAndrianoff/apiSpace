@@ -12,7 +12,11 @@
 {
 	width: 200px;
 	height: 20px;
+<<<<<<< HEAD
 	background: #504e4e;
+=======
+	background: #f6e4c4;
+>>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
 }
 
 .graphic-agency-current-purcent
@@ -20,7 +24,7 @@
 	display: block;
 	height: 100%;
 	transform-origin: left;
-	background: #2222ff;
+	background: #d53939;
 	transform: scaleX(0);
 	transition: 0.5s ease;
 }

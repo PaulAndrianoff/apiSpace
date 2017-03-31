@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2017 at 08:01 PM
+-- Generation Time: Mar 30, 2017 at 07:53 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -23,63 +23,66 @@ SET time_zone = "+00:00";
 CREATE TABLE `agency` (
   `id` int(11) NOT NULL,
   `name` varchar(70) NOT NULL,
-  `abbrev` varchar(10) NOT NULL
+  `abbrev` varchar(10) NOT NULL,
+  `creation_year` int(11) NOT NULL,
+  `budget` float NOT NULL,
+  `collaboration` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `agency`
 --
 
-INSERT INTO `agency` (`id`, `name`, `abbrev`) VALUES
-(1, 'Belarus Space Agency', 'BSA'),
-(2, 'Aeronautics and Space Research and Diffusion Center', 'CIDA-E'),
-(3, 'Mexican Space Agency', 'AEM'),
-(4, 'Algerian Space Agency', 'ASAL'),
-(5, 'Asia-Pacific Regional Space Agency Forum', 'APRSAF'),
-(6, 'Asia-Pacific Space Cooperation Organization', 'APSCO'),
-(7, 'Austrian Space Agency', 'ALR'),
-(8, 'Azerbaijan National Aerospace Agency', 'AMAKA'),
-(9, 'Belgian Institute for Space Aeronomy', 'BIRA'),
-(10, 'Bolivarian Agency for Space Activities', 'ABAE'),
-(11, 'Brazilian Space Agency', 'AEB'),
-(12, 'UK Space Agency', 'UKSA'),
-(13, 'Bolivian Space Agency', 'ABAE'),
-(14, 'Bulgarian Space Agency', 'SRI-BAS'),
-(15, 'Canadian Space Agency', 'CSA'),
-(16, 'China National Space Administration', 'CNSA'),
-(17, 'Colombian Space Commission', 'CCE'),
-(18, 'Centre for Remote Imaging, Sensing and Processing', 'CRISP'),
-(19, 'Commonwealth Scientific and Industrial Research Organisation', 'CSIRO'),
-(20, 'Consultative Committee for Space Data Systems', 'CCSDS'),
-(21, 'Committee on Space Research', 'COSPAR'),
-(22, 'Croatian Space Agency', 'HSA'),
-(23, 'Danish National Space Center', 'DRC'),
-(24, 'Technical University of Denmark - National Space Institute', 'DTU'),
-(25, 'European Space Agency', 'ESA'),
-(26, 'Geo-Informatics and Space Technology Development Agency', 'GISTDA'),
-(27, 'German Aerospace Center', 'DLR'),
-(28, 'Hungarian Space Office', 'HSO'),
-(29, 'Russian Aerospace Defence Forces', 'VKO'),
-(70, 'United States Air Force', 'USAF'),
-(72, 'Russian Federal Space Agency (ROSCOSMOS)', 'FKA'),
-(76, 'National Aeronautics and Space Administration', 'NASA'),
-(162, 'Japan Aerospace Exploration Agency', 'JAXA'),
-(160, 'Iranian Space Agency', 'ISA'),
-(161, 'Italian Space Agency', 'ASI'),
-(172, 'US Army', 'USA'),
-(171, 'United Launch Alliance', 'ULA'),
-(157, 'Indian Space Research Organization', 'ISRO'),
-(153, 'Arianespace', 'ASA'),
-(144, 'Rocket Lab Ltd', 'Rocket Lab'),
-(179, 'SpaceX', 'SpX'),
-(178, 'National Center of Space Research', 'CNES'),
-(173, 'International Launch Services', 'ILS'),
-(143, 'Orbital Sciences Corporation', 'OSC'),
-(186, 'Soviet space program', 'CCCP'),
-(140, 'China Academy of Space Technology', 'CASC'),
-(131, 'Royal Australian Air Force', 'RAAF'),
-(189, 'Eurockot Launch Services', 'ELS'),
-(135, 'Peoples Liberation Army Air Force', 'PLAAF');
+INSERT INTO `agency` (`id`, `name`, `abbrev`, `creation_year`, `budget`, `collaboration`) VALUES
+(1, 'Belarus Space Agency', 'BSA', 2010, 0, 1),
+(2, 'Aeronautics and Space Research and Diffusion Center', 'CIDA-E', 1975, 0, 37),
+(3, 'Mexican Space Agency', 'AEM', 2010, 8.34, 1),
+(4, 'Algerian Space Agency', 'ASAL', 2002, 360, 2),
+(5, 'Asia-Pacific Regional Space Agency Forum', 'APRSAF', 1993, 0, 12),
+(6, 'Asia-Pacific Space Cooperation Organization', 'APSCO', 1993, 0, 12),
+(7, 'Austrian Space Agency', 'ALR', 1972, 0, 28),
+(8, 'Azerbaijan National Aerospace Agency', 'AMAKA', 1974, 0, 18),
+(9, 'Belgian Institute for Space Aeronomy', 'BIRA', 1964, 0, 15),
+(10, 'Bolivarian Agency for Space Activities', 'ABAE', 2006, 0, 21),
+(11, 'Brazilian Space Agency', 'AEB', 1994, 0, 16),
+(12, 'UK Space Agency', 'UKSA', 2010, 0, 26),
+(13, 'Bolivian Space Agency', 'ABAE', 2012, 0, 10),
+(14, 'Bulgarian Space Agency', 'SRI-BAS', 1987, 0, 10),
+(15, 'Canadian Space Agency', 'CSA', 1989, 0, 56),
+(16, 'China National Space Administration', 'CNSA', 1993, 1.78, 6),
+(17, 'Colombian Space Commission', 'CCE', 2006, 0, 15),
+(18, 'Centre for Remote Imaging, Sensing and Processing', 'CRISP', 1995, 0, 26),
+(19, 'Commonwealth Scientific and Industrial Research Organisation', 'CSIRO', 1916, 180, 89),
+(20, 'Consultative Committee for Space Data Systems', 'CCSDS', 1982, 0, 37),
+(21, 'Committee on Space Research', 'COSPAR', 1958, 0, 40),
+(22, 'Croatian Space Agency', 'HSA', 2002, 0, 12),
+(23, 'Danish National Space Center', 'DRC', 1968, 0, 56),
+(24, 'Technical University of Denmark - National Space Institute', 'DTU', 0, 0, 0),
+(25, 'European Space Agency', 'ESA', 1975, 0, 55),
+(26, 'Geo-Informatics and Space Technology Development Agency', 'GISTDA', 2002, 0, 28),
+(27, 'German Aerospace Center', 'DLR', 1969, 2, 51),
+(28, 'Hungarian Space Office', 'HSO', 1992, 0, 28),
+(29, 'Russian Aerospace Defence Forces', 'VKO', 1992, 0, 10),
+(70, 'United States Air Force', 'USAF', 1947, 0, 5),
+(72, 'Russian Federal Space Agency (ROSCOSMOS)', 'FKA', 1992, 0, 10),
+(76, 'National Aeronautics and Space Administration', 'NASA', 1958, 0, 5),
+(162, 'Japan Aerospace Exploration Agency', 'JAXA', 2003, 0, 0),
+(160, 'Iranian Space Agency', 'ISA', 2004, 0, 3),
+(161, 'Italian Space Agency', 'ASI', 1989, 0, 23),
+(172, 'US Army', 'USA', 1931, 0, 0),
+(171, 'United Launch Alliance', 'ULA', 2006, 0, 12),
+(157, 'Indian Space Research Organization', 'ISRO', 1969, 0, 43),
+(153, 'Arianespace', 'ASA', 1980, 0, 36),
+(144, 'Rocket Lab Ltd', 'Rocket Lab', 2007, 0, 31),
+(179, 'SpaceX', 'SpX', 2015, 0, 2),
+(178, 'National Center of Space Research', 'CNES', 2001, 0, 25),
+(173, 'International Launch Services', 'ILS', 1995, 0, 3),
+(143, 'Orbital Sciences Corporation', 'OSC', 1982, 0, 32),
+(186, 'Soviet space program', 'CCCP', 1947, 0, 0),
+(140, 'China Academy of Space Technology', 'CASC', 1968, 0, 0),
+(131, 'Royal Australian Air Force', 'RAAF', 1921, 0, 84),
+(189, 'Eurockot Launch Services', 'ELS', 1995, 0, 0),
+(135, 'Peoples Liberation Army Air Force', 'PLAAF', 1949, 0, 23);
 
 -- --------------------------------------------------------
 

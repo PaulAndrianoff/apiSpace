@@ -5,6 +5,36 @@
   letter-spacing: 20px; }
 
 /* CI dessous les class pour animation*/
+<<<<<<< HEAD
+=======
+.apparition-map {
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transform: translateX(0%) !important; }
+
+.delete-map {
+  transform-origin: center;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transform: translateX(50%) !important; }
+
+.apparition-right {
+  transform-origin: right;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transform: scaleX(1) !important; }
+
+.delete-right {
+  transform-origin: right;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transform: scaleX(0); }
+
+>>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
 .title {
   position: absolute;
   font-weight: 300;
@@ -81,6 +111,7 @@
     transform: translateY(0px);
     opacity: 1; } }
 
+<<<<<<< HEAD
 @media (max-width: 450px) {
   .title {
     position: absolute;
@@ -296,12 +327,24 @@ html {
     max-width: 1440px;
     height: 1550px;
     overflow: hidden; }
+=======
+html {
+  background-color: #0B182B; }
+  html body {
+    min-width: 960px;
+    max-width: 1440px;
+    height: 1550px; }
+>>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
     html body .container-stats {
       position: absolute;
       width: 100%;
       height: 100%;
       margin: auto; }
       html body .container-stats header {
+<<<<<<< HEAD
+=======
+        height: 100px;
+>>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
         border-bottom: 3px solid #00BBFF; }
         html body .container-stats header .title-stats {
           font-family: earthorbiter;
@@ -315,8 +358,12 @@ html {
           letter-spacing: 10px;
           text-align: center;
           color: #fefefe;
+<<<<<<< HEAD
           font-family: 'lato', sans-serif;
           padding-bottom: 10px; }
+=======
+          font-family: 'lato', sans-serif; }
+>>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
       html body .container-stats .main {
         position: relative;
         height: 600px;
@@ -329,6 +376,7 @@ html {
         justify-content: center;
         flex-wrap: wrap; }
         html body .container-stats .main .section-map {
+<<<<<<< HEAD
           position: absolute;
           left: 0;
           width: 50%;
@@ -971,3 +1019,106 @@ html {
       transition-duration: 0.2s;
       transition-timing-function: ease-in;
       transform: scaleY(0); } }
+=======
+          position: absolute;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          background: #0B182B;
+          padding: 2px;
+          transform: translateX(50%);
+          will-change: transform;
+          transform-origin: center; }
+          html body .container-stats .main .section-map #vmap {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; }
+          html body .container-stats .main .section-map .jqvmap-label {
+            position: absolute;
+            display: none;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: #292929;
+            color: white;
+            font-family: sans-serif, Verdana;
+            font-size: smaller;
+            padding: 3px;
+            pointer-events: none; }
+          html body .container-stats .main .section-map .jqvmap-pin {
+            pointer-events: none; }
+          html body .container-stats .main .section-map .jqvmap-zoomin, html body .container-stats .main .section-map .jqvmap-zoomout {
+            position: absolute;
+            left: 10px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: #00BBFF;
+            padding: 3px;
+            color: white;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            line-height: 13px;
+            text-align: center;
+            margin-top: 5px; }
+          html body .container-stats .main .section-map .jqvmap-zoomin {
+            top: 10px; }
+          html body .container-stats .main .section-map .jqvmap-zoomout {
+            top: 30px; }
+          html body .container-stats .main .section-map .jqvmap-region {
+            cursor: pointer; }
+          html body .container-stats .main .section-map .jqvmap-ajax_response {
+            width: 100%;
+            height: 500px; }
+        html body .container-stats .main .section-right {
+          position: absolute;
+          display: inline-block;
+          right: 0;
+          width: 50%;
+          height: 100%;
+          transform: scaleX(0); }
+          html body .container-stats .main .section-right .agency {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            color: white;
+            background: #1c2430;
+            border-left: 3px solid #00BBFF;
+            padding: 5px;
+            font-family: 'lato', sans-serif; }
+            html body .container-stats .main .section-right .agency.agency-one {
+              border-bottom: 1px solid #979797; }
+            html body .container-stats .main .section-right .agency .title_agence {
+              font-size: 2rem;
+              margin-bottom: 15px; }
+            html body .container-stats .main .section-right .agency .description-agency {
+              text-align: center;
+              display: inline-block;
+              width: 35%;
+              height: 100%;
+              border-right: 1px solid #979797; }
+              html body .container-stats .main .section-right .agency .description-agency div {
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 15px; }
+            html body .container-stats .main .section-right .agency .graphic-agency {
+              display: inline-block;
+              width: 65%;
+              height: 100%;
+              margin-left: 10px; }
+              html body .container-stats .main .section-right .agency .graphic-agency h4 {
+                text-align: center;
+                font-size: 1.2rem; }
+            html body .container-stats .main .section-right .agency .wrapper-close {
+              width: 30px;
+              height: 100%;
+              margin-left: 7px;
+              display: flex;
+              align-items: center;
+              border: 1px solid red; }
+              html body .container-stats .main .section-right .agency .wrapper-close a {
+                margin-left: 8px; }
+>>>>>>> 2832a0383643d890c45c9ac32023f0195382f84e
